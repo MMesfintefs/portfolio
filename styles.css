@@ -351,11 +351,17 @@ strong{ font-weight:700; }
 
 /* REVEAL ANIMS */
 .reveal{
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal{
   opacity: 0;
   transform: translateY(18px);
   transition: opacity .7s ease, transform .7s ease;
 }
-.reveal.isVisible{
+
+.js .reveal.isVisible{
   opacity: 1;
   transform: translateY(0);
 }
