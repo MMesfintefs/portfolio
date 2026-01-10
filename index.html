@@ -1,286 +1,177 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Michael Tefera | Business Analytics</title>
-  <meta name="description" content="Business Analytics portfolio: SQL, Python, Excel, dashboards, and decision-making." />
-  <link rel="icon" href="data:," />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
+// Footer year
+document.getElementById("year").textContent = new Date().getFullYear();
 
-<body>
-  <!-- Top Nav -->
-  <header class="nav">
-    <a class="brand" href="#top">MT</a>
+// Mobile nav toggle
+const toggle = document.querySelector(".nav__toggle");
+const links = document.querySelector(".nav__links");
+toggle?.addEventListener("click", () => {
+  const isOpen = links.classList.toggle("open");
+  toggle.setAttribute("aria-expanded", String(isOpen));
+});
+document.querySelectorAll(".nav__links a").forEach(a => {
+  a.addEventListener("click", () => {
+    links.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+  });
+});
 
-    <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+/**
+ * Local Knowledge Base (edit this to match your truth)
+ * Keep it factual. This is your “Wikipedia infobox”.
+ */
+const KB = {
+  identity: {
+    name: "Michael Mesfin Tefera",
+    tagline: "Business Analytics graduate student focused on practical analytics, controls-minded execution, and clear storytelling.",
+    origin: "Add your origin story here (1–2 sentences)."
+  },
+  education: [
+    {
+      school: "Add School (e.g., Bentley University)",
+      degree: "MS, Business Analytics",
+      dates: "Add dates",
+      highlights: ["Add 2–3 highlights: coursework, focus areas, projects"]
+    },
+    {
+      school: "Add School (e.g., SUNY Plattsburgh)",
+      degree: "Bachelor’s (add majors/minors)",
+      dates: "Add dates",
+      highlights: ["Dean’s List (if true)", "Honor societies (if true)", "Key focus areas"]
+    }
+  ],
+  experience: [
+    {
+      org: "Add Company/Org",
+      role: "Add Role Title",
+      dates: "Add dates",
+      bullets: ["Add impact bullet", "Add tools used", "Add outcome"]
+    }
+  ],
+  honors: [
+    "Dean’s List (add semesters/years)",
+    "Honor societies (add names)",
+    "Scholarships/Awards (add)"
+  ],
+  leadership: [
+    "Add leadership role (org + what you did)",
+    "Add campus/community role"
+  ],
+  passions: [
+    "Risk & controls",
+    "Business analytics",
+    "Finance + markets",
+    "Operations & supply chain",
+    "Building systems & products"
+  ],
+  projects: {
+    status: "Coming soon",
+    planned: [
+      "Executive KPI dashboard (SQL + BI)",
+      "Python EDA notebook + validation workflow",
+      "Risk/controls case study with documentation"
+    ]
+  },
+  links: {
+    linkedin: "https://www.linkedin.com/",
+    github: "https://github.com/"
+  }
+};
 
-    <nav class="nav__links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+// --- Simple fuzzy matching helpers ---
+function norm(s){ return (s || "").toLowerCase().trim(); }
+function includesAny(q, arr){ return arr.some(k => q.includes(k)); }
 
-  <main id="top">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="pill">MS Business Analytics • SQL • Python • Excel • Dashboards</p>
-          <h1>
-            Michael Tefera
-            <span class="muted">turning data into decisions that actually move metrics.</span>
-          </h1>
-          <p class="lead">
-            I build clean analytics pipelines, dashboards, and business-ready insights.
-            This site is the foundation. Projects are coming in hot.
-          </p>
+function answerQuestion(qRaw){
+  const q = norm(qRaw);
 
-          <div class="cta">
-            <a class="btn btn--primary" href="#projects">View Projects</a>
-            <a class="btn btn--ghost" href="#contact">Contact</a>
-            <!-- Optional: add a resume pdf in /assets and uncomment -->
-            <!-- <a class="btn btn--ghost" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a> -->
-          </div>
+  // Basic intent routing
+  if (!q) return { title: "Ask Michael", text: "Type a question like “Who is Michael?” or “Where did he attend?”" };
 
-          <div class="quicklinks">
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-            <span>•</span>
-            <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-            <span>•</span>
-            <a href="mailto:your.email@example.com">your.email@example.com</a>
-          </div>
-        </div>
+  if (includesAny(q, ["who is michael", "who is he", "about michael", "summary", "bio", "tell me about"])){
+    return {
+      title: "Who is Michael?",
+      text: `${KB.identity.name}. ${KB.identity.tagline}`
+    };
+  }
 
-        <div class="hero__card">
-          <div class="card">
-            <div class="card__header">
-              <h2>Currently</h2>
-              <p class="muted">Business Analytics grad student</p>
-            </div>
-            <div class="card__body">
-              <ul class="bullets">
-                <li>SQL data pulls + reconciliation</li>
-                <li>Python analytics + automation</li>
-                <li>Dashboards (Tableau/Power BI)</li>
-                <li>Clear, exec-ready storytelling</li>
-              </ul>
-            </div>
-            <div class="card__footer">
-              <span class="tag">Open to internships</span>
-              <span class="tag">Boston area / Remote</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  if (includesAny(q, ["where did he attend", "education", "school", "university", "college", "where did michael study"])){
+    const edu = KB.education.map(e =>
+      `• ${e.school} — ${e.degree} (${e.dates})`
+    ).join("\n");
+    return { title: "Education", text: edu };
+  }
 
-    <!-- About -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>About</h2>
-          <p class="muted">Short, sharp, and useful. Like a good query.</p>
-        </div>
+  if (includesAny(q, ["where did he work", "experience", "work", "job", "intern", "where did michael work"])){
+    const exp = KB.experience.length
+      ? KB.experience.map(e => `• ${e.role} — ${e.org} (${e.dates})`).join("\n")
+      : "Experience entries are being added.";
+    return { title: "Experience", text: exp };
+  }
 
-        <div class="grid2">
-          <div class="panel">
-            <h3>What I do</h3>
-            <p>
-              I translate business questions into analysis you can act on:
-              clean data, strong logic, and outputs people trust.
-            </p>
-            <p>
-              I like projects with real constraints: messy inputs, unclear goals,
-              and stakeholders who want answers yesterday.
-            </p>
-          </div>
+  if (includesAny(q, ["honors", "awards", "dean", "deans list", "recognition"])){
+    return { title: "Honors & Recognition", text: KB.honors.map(h => `• ${h}`).join("\n") };
+  }
 
-          <div class="panel">
-            <h3>What I’m aiming for</h3>
-            <p>
-              Roles where analytics directly affects outcomes: Risk & Controls, Business Analytics,
-              Finance Analytics, Operations/Supply Chain Analytics.
-            </p>
-            <p class="muted small">
-              I’m building this site to ship projects fast and show proof, not promises.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+  if (includesAny(q, ["leadership", "roles", "clubs", "organizations"])){
+    return { title: "Leadership & Roles", text: KB.leadership.map(l => `• ${l}`).join("\n") };
+  }
 
-    <!-- Skills -->
-    <section id="skills" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <h2>Skills</h2>
-          <p class="muted">Tools are nice. Results are nicer.</p>
-        </div>
+  if (includesAny(q, ["passions", "interests", "what does he like", "focus"])){
+    return { title: "Passions", text: KB.passions.map(p => `• ${p}`).join("\n") };
+  }
 
-        <div class="chips">
-          <span class="chip">SQL (joins, CTEs, window functions)</span>
-          <span class="chip">Python (pandas, matplotlib, automation)</span>
-          <span class="chip">Excel (pivot tables, lookups, modeling)</span>
-          <span class="chip">Tableau / Power BI</span>
-          <span class="chip">Data cleaning & validation</span>
-          <span class="chip">Metrics + KPI design</span>
-          <span class="chip">Business storytelling</span>
-          <span class="chip">Documentation & controls mindset</span>
-        </div>
-      </div>
-    </section>
+  if (includesAny(q, ["projects", "portfolio", "what has he built", "what are you building"])){
+    const planned = KB.projects.planned.map(p => `• ${p}`).join("\n");
+    return { title: "Projects", text: `Status: ${KB.projects.status}\n\nPlanned:\n${planned}` };
+  }
 
-    <!-- Projects -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Projects</h2>
-          <p class="muted">Placeholders now. Real projects get added as tiles later.</p>
-        </div>
+  if (includesAny(q, ["roles fit", "what roles", "career", "what should he do", "path"])){
+    return {
+      title: "Best-fit roles (current positioning)",
+      text:
+`• Business Analyst / Strategy Analyst
+• Data Analyst (SQL-heavy)
+• Risk / Controls / Compliance Analytics
+• Finance Analytics (FP&A / reporting)
+• Operations / Supply Chain Analytics
 
-        <div class="cards">
-          <article class="proj">
-            <h3>Project 1: Dashboard (Coming Soon)</h3>
-            <p>Executive KPI dashboard with SQL-backed metrics and clean narrative.</p>
-            <div class="proj__meta">
-              <span class="pill2">SQL</span><span class="pill2">Tableau</span><span class="pill2">KPI</span>
-            </div>
-            <div class="proj__links">
-              <a class="link disabled" href="#" aria-disabled="true">Live</a>
-              <a class="link disabled" href="#" aria-disabled="true">Code</a>
-            </div>
-          </article>
+If you want the sharper version: pick one lane and stack projects to match it.`
+    };
+  }
 
-          <article class="proj">
-            <h3>Project 2: Python Analysis (Coming Soon)</h3>
-            <p>Data cleaning, exploratory analysis, and insights with reproducible notebooks.</p>
-            <div class="proj__meta">
-              <span class="pill2">Python</span><span class="pill2">pandas</span><span class="pill2">EDA</span>
-            </div>
-            <div class="proj__links">
-              <a class="link disabled" href="#" aria-disabled="true">Report</a>
-              <a class="link disabled" href="#" aria-disabled="true">Code</a>
-            </div>
-          </article>
+  // Fallback
+  return {
+    title: "I can answer that better with more facts",
+    text:
+`I’m currently answering from what’s written on the site (by design).
+Try: “Who is Michael?”, “Where did he attend?”, “Where did he work?”, “What are his honors?”`
+  };
+}
 
-          <article class="proj">
-            <h3>Project 3: Risk/Controls Case (Coming Soon)</h3>
-            <p>Controls testing + reconciliation workflow with documentation and audit trail.</p>
-            <div class="proj__meta">
-              <span class="pill2">Controls</span><span class="pill2">Excel</span><span class="pill2">Reconciliation</span>
-            </div>
-            <div class="proj__links">
-              <a class="link disabled" href="#" aria-disabled="true">Summary</a>
-              <a class="link disabled" href="#" aria-disabled="true">Artifacts</a>
-            </div>
-          </article>
-        </div>
+// --- UI wiring ---
+const askInput = document.getElementById("askInput");
+const askBtn = document.getElementById("askBtn");
+const askAnswer = document.getElementById("askAnswer");
 
-        <div class="note">
-          <p><strong>Next:</strong> We’ll replace these with real project cards (title, impact, screenshots, links).</p>
-        </div>
-      </div>
-    </section>
+function renderAnswer(obj){
+  askAnswer.innerHTML = `
+    <div class="answerTitle">${obj.title}</div>
+    <pre class="muted small" style="white-space:pre-wrap;margin:0;">${obj.text}</pre>
+  `;
+}
 
-    <!-- Experience -->
-    <section id="experience" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <h2>Experience</h2>
-          <p class="muted">Short bullets. High signal. No fluff.</p>
-        </div>
+askBtn?.addEventListener("click", () => renderAnswer(answerQuestion(askInput.value)));
+askInput?.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") renderAnswer(answerQuestion(askInput.value));
+});
 
-        <div class="timeline">
-          <div class="role">
-            <div class="role__top">
-              <h3>Graduate Student, Business Analytics</h3>
-              <span class="muted">2025–Present</span>
-            </div>
-            <ul class="bullets">
-              <li>Analytics coursework + applied projects (SQL, Python, dashboards)</li>
-              <li>Built analysis and reporting workflows with business framing</li>
-            </ul>
-          </div>
+document.querySelectorAll("[data-q]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const q = btn.getAttribute("data-q");
+    askInput.value = q;
+    renderAnswer(answerQuestion(q));
+  });
+});
 
-          <div class="role">
-            <div class="role__top">
-              <h3>Intern / Analyst Experience</h3>
-              <span class="muted">Add your dates</span>
-            </div>
-            <ul class="bullets">
-              <li>Replace with real bullets later: scope, tools, and outcomes</li>
-              <li>Keep it measurable: time saved, accuracy improved, dollars impacted</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Contact</h2>
-          <p class="muted">Make it stupid-easy for recruiters to reach you.</p>
-        </div>
-
-        <div class="contact">
-          <div class="panel">
-            <h3>Let’s talk</h3>
-            <p class="muted">
-              Email is fastest. LinkedIn is fine too, if you enjoy notifications.
-            </p>
-
-            <div class="contact__links">
-              <a class="btn btn--primary" href="mailto:your.email@example.com">Email me</a>
-              <a class="btn btn--ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-              <a class="btn btn--ghost" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-            </div>
-
-            <p class="muted small">
-              Tip: Use a professional email and a clean LinkedIn URL. The bar is low, but still.
-            </p>
-          </div>
-
-          <form class="panel form" onsubmit="return false;">
-            <h3>Quick message (optional)</h3>
-            <label>
-              Name
-              <input type="text" placeholder="Your name" />
-            </label>
-            <label>
-              Email
-              <input type="email" placeholder="you@company.com" />
-            </label>
-            <label>
-              Message
-              <textarea rows="4" placeholder="What do you want to build / discuss?"></textarea>
-            </label>
-            <button class="btn btn--primary" type="button" id="copyEmailBtn">Copy my email</button>
-            <p class="muted small" id="copyStatus" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container footer__inner">
-        <span>© <span id="year"></span> Michael Tefera</span>
-        <span class="muted">Built with plain HTML/CSS/JS because it’s fast and doesn’t break.</span>
-      </div>
-    </footer>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+// Seed a default answer
+renderAnswer(answerQuestion("Who is Michael?"));
