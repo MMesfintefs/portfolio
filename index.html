@@ -1,177 +1,395 @@
-// Footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Michael Tefera | Story & Portfolio</title>
+  <meta name="description" content="Michael Tefera: background, education, experience, honors, leadership, and upcoming projects." />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-// Mobile nav toggle
-const toggle = document.querySelector(".nav__toggle");
-const links = document.querySelector(".nav__links");
-toggle?.addEventListener("click", () => {
-  const isOpen = links.classList.toggle("open");
-  toggle.setAttribute("aria-expanded", String(isOpen));
-});
-document.querySelectorAll(".nav__links a").forEach(a => {
-  a.addEventListener("click", () => {
-    links.classList.remove("open");
-    toggle.setAttribute("aria-expanded", "false");
-  });
-});
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">MT</a>
 
-/**
- * Local Knowledge Base (edit this to match your truth)
- * Keep it factual. This is your “Wikipedia infobox”.
- */
-const KB = {
-  identity: {
-    name: "Michael Mesfin Tefera",
-    tagline: "Business Analytics graduate student focused on practical analytics, controls-minded execution, and clear storytelling.",
-    origin: "Add your origin story here (1–2 sentences)."
-  },
-  education: [
-    {
-      school: "Add School (e.g., Bentley University)",
-      degree: "MS, Business Analytics",
-      dates: "Add dates",
-      highlights: ["Add 2–3 highlights: coursework, focus areas, projects"]
-    },
-    {
-      school: "Add School (e.g., SUNY Plattsburgh)",
-      degree: "Bachelor’s (add majors/minors)",
-      dates: "Add dates",
-      highlights: ["Dean’s List (if true)", "Honor societies (if true)", "Key focus areas"]
-    }
-  ],
-  experience: [
-    {
-      org: "Add Company/Org",
-      role: "Add Role Title",
-      dates: "Add dates",
-      bullets: ["Add impact bullet", "Add tools used", "Add outcome"]
-    }
-  ],
-  honors: [
-    "Dean’s List (add semesters/years)",
-    "Honor societies (add names)",
-    "Scholarships/Awards (add)"
-  ],
-  leadership: [
-    "Add leadership role (org + what you did)",
-    "Add campus/community role"
-  ],
-  passions: [
-    "Risk & controls",
-    "Business analytics",
-    "Finance + markets",
-    "Operations & supply chain",
-    "Building systems & products"
-  ],
-  projects: {
-    status: "Coming soon",
-    planned: [
-      "Executive KPI dashboard (SQL + BI)",
-      "Python EDA notebook + validation workflow",
-      "Risk/controls case study with documentation"
-    ]
-  },
-  links: {
-    linkedin: "https://www.linkedin.com/",
-    github: "https://github.com/"
-  }
-};
+    <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
 
-// --- Simple fuzzy matching helpers ---
-function norm(s){ return (s || "").toLowerCase().trim(); }
-function includesAny(q, arr){ return arr.some(k => q.includes(k)); }
+    <nav class="nav__links">
+      <a href="#overview">Overview</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#honors">Honors</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#passions">Passions</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-function answerQuestion(qRaw){
-  const q = norm(qRaw);
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="pill">Story-first portfolio • Business Analytics • SQL • Python • Excel</p>
+          <h1>
+            Michael Mesfin Tefera
+            <span class="muted">a living case study in momentum.</span>
+          </h1>
+          <p class="lead">
+            This site is my record: where I’ve been, what I’ve built, and what I’m becoming.
+            Projects, publications, and ventures will be added as they ship.
+          </p>
 
-  // Basic intent routing
-  if (!q) return { title: "Ask Michael", text: "Type a question like “Who is Michael?” or “Where did he attend?”" };
+          <div class="cta">
+            <a class="btn btn--primary" href="#overview">Read the story</a>
+            <a class="btn btn--ghost" href="#projects">Projects</a>
+            <a class="btn btn--ghost" href="#contact">Contact</a>
+          </div>
 
-  if (includesAny(q, ["who is michael", "who is he", "about michael", "summary", "bio", "tell me about"])){
-    return {
-      title: "Who is Michael?",
-      text: `${KB.identity.name}. ${KB.identity.tagline}`
-    };
-  }
+          <div class="quicklinks">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <span>•</span>
+            <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <span>•</span>
+            <a href="mailto:your.email@example.com">your.email@example.com</a>
+          </div>
+        </div>
 
-  if (includesAny(q, ["where did he attend", "education", "school", "university", "college", "where did michael study"])){
-    const edu = KB.education.map(e =>
-      `• ${e.school} — ${e.degree} (${e.dates})`
-    ).join("\n");
-    return { title: "Education", text: edu };
-  }
+        <!-- ASK BOX -->
+        <div class="hero__card">
+          <div class="card">
+            <div class="card__header">
+              <h2>Ask Michael</h2>
+              <p class="muted">Try: “Who is Michael?” “Where did he attend?” “What roles fit him?”</p>
+            </div>
 
-  if (includesAny(q, ["where did he work", "experience", "work", "job", "intern", "where did michael work"])){
-    const exp = KB.experience.length
-      ? KB.experience.map(e => `• ${e.role} — ${e.org} (${e.dates})`).join("\n")
-      : "Experience entries are being added.";
-    return { title: "Experience", text: exp };
-  }
+            <div class="card__body">
+              <div class="ask">
+                <input id="askInput" type="text" placeholder='Ask something like: "Where did Michael work?"' />
+                <button class="btn btn--primary" id="askBtn" type="button">Ask</button>
+              </div>
+              <div class="ask__suggest">
+                <button class="chip chip--btn" data-q="Who is Michael?">Who is Michael?</button>
+                <button class="chip chip--btn" data-q="Where did he attend?">Where did he attend?</button>
+                <button class="chip chip--btn" data-q="Where did he work?">Where did he work?</button>
+                <button class="chip chip--btn" data-q="What are his honors?">What are his honors?</button>
+              </div>
+              <div class="ask__answer" id="askAnswer" aria-live="polite">
+                <p class="muted small">I answer from the information on this site. No hallucinations, no ego.</p>
+              </div>
+            </div>
 
-  if (includesAny(q, ["honors", "awards", "dean", "deans list", "recognition"])){
-    return { title: "Honors & Recognition", text: KB.honors.map(h => `• ${h}`).join("\n") };
-  }
+            <div class="card__footer">
+              <span class="tag">Story mode</span>
+              <span class="tag">Recruiter-friendly</span>
+              <span class="tag">Projects coming</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  if (includesAny(q, ["leadership", "roles", "clubs", "organizations"])){
-    return { title: "Leadership & Roles", text: KB.leadership.map(l => `• ${l}`).join("\n") };
-  }
+    <!-- OVERVIEW -->
+    <section id="overview" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Overview</h2>
+          <p class="muted">The short version. The long version is everything below.</p>
+        </div>
 
-  if (includesAny(q, ["passions", "interests", "what does he like", "focus"])){
-    return { title: "Passions", text: KB.passions.map(p => `• ${p}`).join("\n") };
-  }
+        <div class="grid2">
+          <div class="panel">
+            <h3>Summary</h3>
+            <p>
+              I’m a Business Analytics graduate student with a practical bias: clean data, clear logic, measurable outcomes.
+              I build dashboards, perform validation/reconciliation, and turn ambiguity into decisions.
+            </p>
+            <p class="muted small">
+              This is not a “hire me” plea. It’s a living record of work, values, and trajectory.
+            </p>
+          </div>
 
-  if (includesAny(q, ["projects", "portfolio", "what has he built", "what are you building"])){
-    const planned = KB.projects.planned.map(p => `• ${p}`).join("\n");
-    return { title: "Projects", text: `Status: ${KB.projects.status}\n\nPlanned:\n${planned}` };
-  }
+          <div class="panel">
+            <h3>At a glance</h3>
+            <ul class="bullets">
+              <li>Focus: Analytics + Risk/Controls + Business decision support</li>
+              <li>Tools: SQL, Python, Excel, Tableau/Power BI</li>
+              <li>Strength: documentation, structure, and execution</li>
+              <li>Next: projects, case studies, publications, ventures</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  if (includesAny(q, ["roles fit", "what roles", "career", "what should he do", "path"])){
-    return {
-      title: "Best-fit roles (current positioning)",
-      text:
-`• Business Analyst / Strategy Analyst
-• Data Analyst (SQL-heavy)
-• Risk / Controls / Compliance Analytics
-• Finance Analytics (FP&A / reporting)
-• Operations / Supply Chain Analytics
+    <!-- TIMELINE -->
+    <section id="timeline" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Timeline</h2>
+          <p class="muted">A narrative spine. Recruiters love this because it makes sense.</p>
+        </div>
 
-If you want the sharper version: pick one lane and stack projects to match it.`
-    };
-  }
+        <div class="timeline">
+          <div class="role">
+            <div class="role__top">
+              <h3>Origins</h3>
+              <span class="muted">Add your birthplace / early story (optional)</span>
+            </div>
+            <ul class="bullets">
+              <li>Write 1–2 lines about your background and what shaped you.</li>
+            </ul>
+          </div>
 
-  // Fallback
-  return {
-    title: "I can answer that better with more facts",
-    text:
-`I’m currently answering from what’s written on the site (by design).
-Try: “Who is Michael?”, “Where did he attend?”, “Where did he work?”, “What are his honors?”`
-  };
-}
+          <div class="role">
+            <div class="role__top">
+              <h3>Education path</h3>
+              <span class="muted">SUNY Plattsburgh → Bentley (example)</span>
+            </div>
+            <ul class="bullets">
+              <li>High-level storyline: interests, pivot points, milestones.</li>
+            </ul>
+          </div>
 
-// --- UI wiring ---
-const askInput = document.getElementById("askInput");
-const askBtn = document.getElementById("askBtn");
-const askAnswer = document.getElementById("askAnswer");
+          <div class="role">
+            <div class="role__top">
+              <h3>Career direction</h3>
+              <span class="muted">Analytics • Risk • Business</span>
+            </div>
+            <ul class="bullets">
+              <li>What roles you’re targeting and why they fit your narrative.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-function renderAnswer(obj){
-  askAnswer.innerHTML = `
-    <div class="answerTitle">${obj.title}</div>
-    <pre class="muted small" style="white-space:pre-wrap;margin:0;">${obj.text}</pre>
-  `;
-}
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Education</h2>
+          <p class="muted">Where I trained my thinking.</p>
+        </div>
 
-askBtn?.addEventListener("click", () => renderAnswer(answerQuestion(askInput.value)));
-askInput?.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") renderAnswer(answerQuestion(askInput.value));
-});
+        <div class="timeline">
+          <div class="role">
+            <div class="role__top">
+              <h3>Master’s in Business Analytics</h3>
+              <span class="muted">Add school • Add dates</span>
+            </div>
+            <ul class="bullets">
+              <li>Coursework: SQL, analytics, modeling, visualization, strategy</li>
+              <li>Projects: will be linked in the Projects section</li>
+            </ul>
+          </div>
 
-document.querySelectorAll("[data-q]").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const q = btn.getAttribute("data-q");
-    askInput.value = q;
-    renderAnswer(answerQuestion(q));
-  });
-});
+          <div class="role">
+            <div class="role__top">
+              <h3>Bachelor’s</h3>
+              <span class="muted">Add school • Add majors/minors • Add dates</span>
+            </div>
+            <ul class="bullets">
+              <li>Majors/Minors: International Business / MIS / Business Admin (example)</li>
+              <li>Focus areas: economics, supply chain, systems, analytics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-// Seed a default answer
-renderAnswer(answerQuestion("Who is Michael?"));
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Work & Experience</h2>
+          <p class="muted">Proof that I can operate in the real world.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="role">
+            <div class="role__top">
+              <h3>Role Title</h3>
+              <span class="muted">Company • Dates</span>
+            </div>
+            <ul class="bullets">
+              <li>What you did (impact-focused, measurable if possible).</li>
+              <li>Tools used (SQL, Excel, Python, dashboards, etc.).</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <div class="role__top">
+              <h3>Role Title</h3>
+              <span class="muted">Company • Dates</span>
+            </div>
+            <ul class="bullets">
+              <li>Add your internship(s), campus roles, analytics work.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HONORS -->
+    <section id="honors" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Honors & Academic Recognition</h2>
+          <p class="muted">Signals that I did the work when nobody was watching.</p>
+        </div>
+
+        <div class="cards">
+          <article class="proj">
+            <h3>Dean’s List</h3>
+            <p>Include semesters/years if you want. Keep it factual.</p>
+            <div class="proj__meta"><span class="pill2">Academics</span></div>
+          </article>
+
+          <article class="proj">
+            <h3>Honor Societies</h3>
+            <p>Beta Gamma Sigma / Gamma Sigma Alpha / others.</p>
+            <div class="proj__meta"><span class="pill2">Recognition</span></div>
+          </article>
+
+          <article class="proj">
+            <h3>Awards / Scholarships</h3>
+            <p>Add any scholarships, grants, merit awards.</p>
+            <div class="proj__meta"><span class="pill2">Merit</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section id="leadership" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Leadership & Roles</h2>
+          <p class="muted">Not “leadership” as a word. Leadership as receipts.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="role">
+            <div class="role__top">
+              <h3>Organization / Role</h3>
+              <span class="muted">Dates</span>
+            </div>
+            <ul class="bullets">
+              <li>What you owned. What you improved. Who you served.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <div class="role__top">
+              <h3>Community / Campus Role</h3>
+              <span class="muted">Dates</span>
+            </div>
+            <ul class="bullets">
+              <li>Any mentoring, tutoring, GA, lab work, clubs, etc.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASSIONS -->
+    <section id="passions" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Passions</h2>
+          <p class="muted">What I think about when nobody is grading me.</p>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Risk & controls</span>
+          <span class="chip">Business analytics</span>
+          <span class="chip">Finance + markets</span>
+          <span class="chip">Operations & supply chain</span>
+          <span class="chip">Building systems & products</span>
+          <span class="chip">Writing / communicating clearly</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Projects</h2>
+          <p class="muted">Announced soon. Shipped beats talked-about.</p>
+        </div>
+
+        <div class="cards">
+          <article class="proj">
+            <h3>Analytics Dashboard (Coming Soon)</h3>
+            <p>Executive-ready metrics dashboard with clean definitions.</p>
+            <div class="proj__meta"><span class="pill2">SQL</span><span class="pill2">BI</span></div>
+          </article>
+
+          <article class="proj">
+            <h3>Python Analysis Notebook (Coming Soon)</h3>
+            <p>EDA + validation + insights with reproducibility.</p>
+            <div class="proj__meta"><span class="pill2">Python</span><span class="pill2">pandas</span></div>
+          </article>
+
+          <article class="proj">
+            <h3>Risk/Controls Case Study (Coming Soon)</h3>
+            <p>Reconciliation workflow + documentation trail.</p>
+            <div class="proj__meta"><span class="pill2">Controls</span><span class="pill2">Excel</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Contact</h2>
+          <p class="muted">Simple. Direct. No forms that nobody reads.</p>
+        </div>
+
+        <div class="contact">
+          <div class="panel">
+            <h3>Reach me</h3>
+            <p class="muted">Email is best. LinkedIn is acceptable. Smoke signals are inefficient.</p>
+
+            <div class="contact__links">
+              <a class="btn btn--primary" href="mailto:your.email@example.com">Email</a>
+              <a class="btn btn--ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn btn--ghost" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Quick facts</h3>
+            <ul class="bullets">
+              <li>Location: add yours</li>
+              <li>Focus: analytics + risk/controls</li>
+              <li>Open to: internships / co-ops</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span>© <span id="year"></span> Michael Tefera</span>
+        <span class="muted">Built to be a living record, not a one-time flex.</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
