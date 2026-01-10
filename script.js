@@ -323,5 +323,6 @@ $$("[data-q]").forEach(btn => {
   });
 });
 
+document.documentElement.classList.add("js");
 // Seed
 renderAnswer(answerQuestion("Who is Michael?"));
