@@ -3,319 +3,402 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Michael Tefera | Story & Portfolio</title>
-  <meta name="description" content="Michael Tefera: background, education, experience, honors, leadership, and upcoming projects." />
+  <title>Michael Mesfin Tefera | Story</title>
+  <meta name="description" content="Michael Mesfin Tefera: origin, education, experience, honors, leadership, and trajectory." />
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <!-- Top Nav -->
   <header class="nav">
-    <a class="brand" href="#top">MT</a>
+    <a class="brand" href="#top" aria-label="Home">MT</a>
 
-    <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="nav__links">
+    <nav class="nav__links" aria-label="Primary">
       <a href="#overview">Overview</a>
-      <a href="#timeline">Timeline</a>
+      <a href="#story">Story</a>
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
       <a href="#honors">Honors</a>
       <a href="#leadership">Leadership</a>
-      <a href="#passions">Passions</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
+
+    <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <!-- Scroll progress (top line) -->
+  <div class="progress" aria-hidden="true">
+    <div class="progress__bar" id="progressBar"></div>
+  </div>
 
   <main id="top">
     <!-- HERO -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="pill">Story-first portfolio • Business Analytics • SQL • Python • Excel</p>
-          <h1>
+          <div class="pill">Business Analytics • Systems • Risk • Compliance • Governance</div>
+
+          <!-- This headline animates on scroll -->
+          <h1 class="scrollTitle" data-scrolltitle>
             Michael Mesfin Tefera
-            <span class="muted">a living case study in momentum.</span>
+            <span class="muted">a story-first portfolio, built to scale.</span>
           </h1>
+
           <p class="lead">
-            This site is my record: where I’ve been, what I’ve built, and what I’m becoming.
-            Projects, publications, and ventures will be added as they ship.
+            Business analytics graduate student with a systems, risk, compliance, and governance mindset
+            focused on data-driven decision-making.
           </p>
 
           <div class="cta">
-            <a class="btn btn--primary" href="#overview">Read the story</a>
+            <a class="btn btn--primary" href="#story">Read the story</a>
             <a class="btn btn--ghost" href="#projects">Projects</a>
             <a class="btn btn--ghost" href="#contact">Contact</a>
           </div>
 
           <div class="quicklinks">
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="lnkLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>
             <span>•</span>
-            <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <a id="lnkGitHub" href="#" target="_blank" rel="noopener">GitHub</a>
             <span>•</span>
-            <a href="mailto:your.email@example.com">your.email@example.com</a>
+            <a id="lnkEmail" href="#">Email</a>
+          </div>
+
+          <!-- Logos row (placeholders now; swap to real images later) -->
+          <div class="logos reveal">
+            <div class="logoCard" title="Bentley University">
+              <div class="logoMark">B</div>
+              <div class="logoText">
+                <div class="logoName">Bentley</div>
+                <div class="logoMeta">MSBA</div>
+              </div>
+            </div>
+
+            <div class="logoCard" title="SUNY Plattsburgh">
+              <div class="logoMark">P</div>
+              <div class="logoText">
+                <div class="logoName">SUNY Plattsburgh</div>
+                <div class="logoMeta">BA</div>
+              </div>
+            </div>
+
+            <div class="logoCard" title="Ethio-Parents’ School (Gerji Campus)">
+              <div class="logoMark">E</div>
+              <div class="logoText">
+                <div class="logoName">Ethio-Parents’</div>
+                <div class="logoMeta">Gerji</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- ASK BOX -->
-        <div class="hero__card">
-          <div class="card">
-            <div class="card__header">
-              <h2>Ask Michael</h2>
-              <p class="muted">Try: “Who is Michael?” “Where did he attend?” “What roles fit him?”</p>
+        <!-- PHOTO PLACEHOLDER -->
+        <div class="hero__right">
+          <div class="portrait reveal">
+            <div class="portrait__frame">
+              <div class="portrait__placeholder">
+                <div class="portrait__icon" aria-hidden="true"></div>
+                <div class="portrait__title">Your photo goes here</div>
+                <div class="portrait__meta muted">Drop in later: assets/profile.jpg</div>
+              </div>
+              <img id="profileImg" class="portrait__img" alt="Michael profile photo" />
             </div>
 
-            <div class="card__body">
-              <div class="ask">
-                <input id="askInput" type="text" placeholder='Ask something like: "Where did Michael work?"' />
-                <button class="btn btn--primary" id="askBtn" type="button">Ask</button>
+            <!-- ASK MICHAEL -->
+            <div class="card askCard reveal">
+              <div class="card__header">
+                <h2>Ask Michael</h2>
+                <p class="muted">Try: “Who is Michael?” “Where did he attend?” “What honors does he have?”</p>
               </div>
-              <div class="ask__suggest">
-                <button class="chip chip--btn" data-q="Who is Michael?">Who is Michael?</button>
-                <button class="chip chip--btn" data-q="Where did he attend?">Where did he attend?</button>
-                <button class="chip chip--btn" data-q="Where did he work?">Where did he work?</button>
-                <button class="chip chip--btn" data-q="What are his honors?">What are his honors?</button>
-              </div>
-              <div class="ask__answer" id="askAnswer" aria-live="polite">
-                <p class="muted small">I answer from the information on this site. No hallucinations, no ego.</p>
-              </div>
-            </div>
+              <div class="card__body">
+                <div class="askRow">
+                  <input id="askInput" class="askInput" type="text" placeholder='Ask: "Where did Michael attend?"' />
+                  <button id="askBtn" class="btn btn--primary" type="button">Ask</button>
+                </div>
 
-            <div class="card__footer">
-              <span class="tag">Story mode</span>
-              <span class="tag">Recruiter-friendly</span>
-              <span class="tag">Projects coming</span>
+                <div class="askChips">
+                  <button class="chip chip--btn" data-q="Who is Michael?">Who is Michael?</button>
+                  <button class="chip chip--btn" data-q="Where did he attend?">Where did he attend?</button>
+                  <button class="chip chip--btn" data-q="Where did he work?">Where did he work?</button>
+                  <button class="chip chip--btn" data-q="What are his honors?">Honors</button>
+                  <button class="chip chip--btn" data-q="What roles fit him?">Roles fit</button>
+                </div>
+
+                <div class="askAnswer" id="askAnswer" aria-live="polite"></div>
+                <p class="muted tiny">
+                  This assistant answers from the site’s record. No transcript. No private info. No fiction.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="scrollHint" aria-hidden="true">
+        <div class="scrollHint__dot"></div>
+        <div class="scrollHint__text">Scroll</div>
       </div>
     </section>
 
     <!-- OVERVIEW -->
-    <section id="overview" class="section">
+    <section id="overview" class="section section--alt">
       <div class="container">
         <div class="section__head">
-          <h2>Overview</h2>
-          <p class="muted">The short version. The long version is everything below.</p>
+          <h2 class="reveal">Overview</h2>
+          <p class="muted reveal">A living record. Clean, factual, expandable.</p>
         </div>
 
         <div class="grid2">
-          <div class="panel">
-            <h3>Summary</h3>
+          <div class="panel reveal">
+            <h3>What this is</h3>
             <p>
-              I’m a Business Analytics graduate student with a practical bias: clean data, clear logic, measurable outcomes.
-              I build dashboards, perform validation/reconciliation, and turn ambiguity into decisions.
+              A narrative portfolio designed like a Wikipedia entry and a product page had a quiet, competent child.
+              It documents origin, education, work, honors, leadership, and trajectory.
             </p>
-            <p class="muted small">
-              This is not a “hire me” plea. It’s a living record of work, values, and trajectory.
+            <p class="muted">
+              Projects and publications appear when they’re shipped, not when they’re imagined.
             </p>
           </div>
 
-          <div class="panel">
-            <h3>At a glance</h3>
+          <div class="panel reveal">
+            <h3>What I optimize for</h3>
             <ul class="bullets">
-              <li>Focus: Analytics + Risk/Controls + Business decision support</li>
-              <li>Tools: SQL, Python, Excel, Tableau/Power BI</li>
-              <li>Strength: documentation, structure, and execution</li>
-              <li>Next: projects, case studies, publications, ventures</li>
+              <li>Structured decision-making under constraints</li>
+              <li>Risk-aware execution and governance-minded analytics</li>
+              <li>Clear documentation and stakeholder-ready storytelling</li>
+              <li>Systems thinking: how parts connect and fail</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TIMELINE -->
-    <section id="timeline" class="section section--alt">
+    <!-- STORY -->
+    <section id="story" class="section">
       <div class="container">
         <div class="section__head">
-          <h2>Timeline</h2>
-          <p class="muted">A narrative spine. Recruiters love this because it makes sense.</p>
+          <h2 class="reveal">Story</h2>
+          <p class="muted reveal">Origins, trajectory, and the logic behind the choices.</p>
         </div>
 
         <div class="timeline">
-          <div class="role">
-            <div class="role__top">
+          <article class="tCard reveal">
+            <div class="tCard__top">
               <h3>Origins</h3>
-              <span class="muted">Add your birthplace / early story (optional)</span>
+              <span class="muted">Addis Ababa, Ethiopia</span>
             </div>
-            <ul class="bullets">
-              <li>Write 1–2 lines about your background and what shaped you.</li>
-            </ul>
-          </div>
+            <p class="muted">
+              Born and raised in Addis Ababa. Educated at Ethio-Parents’ School (Gerji Campus).
+              Early exposure to business and finance shaped an interest in operations, incentives, and how decisions ripple through systems.
+            </p>
+          </article>
 
-          <div class="role">
-            <div class="role__top">
-              <h3>Education path</h3>
-              <span class="muted">SUNY Plattsburgh → Bentley (example)</span>
+          <article class="tCard reveal">
+            <div class="tCard__top">
+              <h3>Move to the U.S.</h3>
+              <span class="muted">Fall 2021</span>
             </div>
-            <ul class="bullets">
-              <li>High-level storyline: interests, pivot points, milestones.</li>
-            </ul>
-          </div>
+            <p class="muted">
+              Moved to the United States to begin undergraduate studies in International Business.
+              Over time, expanded into MIS and Business Administration to deepen the business–technology intersection.
+            </p>
+          </article>
 
-          <div class="role">
-            <div class="role__top">
-              <h3>Career direction</h3>
-              <span class="muted">Analytics • Risk • Business</span>
+          <article class="tCard reveal">
+            <div class="tCard__top">
+              <h3>Systems + Analytics</h3>
+              <span class="muted">The through-line</span>
             </div>
-            <ul class="bullets">
-              <li>What roles you’re targeting and why they fit your narrative.</li>
-            </ul>
-          </div>
+            <p class="muted">
+              Interest evolved from curiosity about how things work into a structured focus: data-driven decision-making,
+              risk mitigation, compliance and governance, and analytics that hold up in real environments.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- EDUCATION -->
-    <section id="education" class="section">
+    <section id="education" class="section section--alt">
       <div class="container">
         <div class="section__head">
-          <h2>Education</h2>
-          <p class="muted">Where I trained my thinking.</p>
+          <h2 class="reveal">Education</h2>
+          <p class="muted reveal">Formal training. Clear signals.</p>
         </div>
 
         <div class="timeline">
-          <div class="role">
-            <div class="role__top">
-              <h3>Master’s in Business Analytics</h3>
-              <span class="muted">Add school • Add dates</span>
+          <article class="tCard reveal">
+            <div class="tCard__top">
+              <h3>Bentley University – McCallum Graduate School of Business</h3>
+              <span class="muted">M.S. Business Analytics</span>
             </div>
             <ul class="bullets">
-              <li>Coursework: SQL, analytics, modeling, visualization, strategy</li>
-              <li>Projects: will be linked in the Projects section</li>
+              <li><strong>GPA:</strong> 3.56 / 4.00</li>
+              <li><strong>Expected:</strong> May 2027</li>
+              <li>Focus: analytics execution, data validation, reporting, decision support</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="role">
-            <div class="role__top">
-              <h3>Bachelor’s</h3>
-              <span class="muted">Add school • Add majors/minors • Add dates</span>
+          <article class="tCard reveal">
+            <div class="tCard__top">
+              <h3>SUNY Plattsburgh</h3>
+              <span class="muted">B.S. (Triple Major)</span>
             </div>
             <ul class="bullets">
-              <li>Majors/Minors: International Business / MIS / Business Admin (example)</li>
-              <li>Focus areas: economics, supply chain, systems, analytics</li>
+              <li>International Business • Management Information Systems • Business Administration</li>
+              <li><strong>Minor:</strong> Global Supply Chain Management</li>
+              <li><strong>GPA:</strong> 3.68 / 4.00 (cum laude)</li>
+              <li>Graduated: May 2025</li>
             </ul>
-          </div>
+          </article>
+
+          <article class="tCard reveal">
+            <div class="tCard__top">
+              <h3>Ethio-Parents’ School (Gerji Campus)</h3>
+              <span class="muted">Primary & Secondary Education</span>
+            </div>
+            <p class="muted">
+              Completed schooling in Addis Ababa, Ethiopia. Built early interest in business, economics, and systems thinking.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="section section--alt">
+    <section id="experience" class="section">
       <div class="container">
         <div class="section__head">
-          <h2>Work & Experience</h2>
-          <p class="muted">Proof that I can operate in the real world.</p>
+          <h2 class="reveal">Experience</h2>
+          <p class="muted reveal">Where theory met constraints.</p>
         </div>
 
         <div class="timeline">
-          <div class="role">
-            <div class="role__top">
-              <h3>Role Title</h3>
-              <span class="muted">Company • Dates</span>
+          <article class="tCard reveal">
+            <div class="tCard__top">
+              <h3>Graduate Assistant — CIS Sandbox (Bentley University)</h3>
+              <span class="muted">Sep 2025 – Present</span>
             </div>
             <ul class="bullets">
-              <li>What you did (impact-focused, measurable if possible).</li>
-              <li>Tools used (SQL, Excel, Python, dashboards, etc.).</li>
+              <li>Tutors 20+ students weekly in Excel, SQL, and Python</li>
+              <li>Validates datasets and analytical models to identify errors and edge cases</li>
+              <li>Supports faculty with datasets, documentation, and analytical demos</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="role">
-            <div class="role__top">
-              <h3>Role Title</h3>
-              <span class="muted">Company • Dates</span>
+          <article class="tCard reveal">
+            <div class="tCard__top">
+              <h3>Supply Chain Associate Intern — Fastenal</h3>
+              <span class="muted">Jan 2025 – May 2025</span>
             </div>
             <ul class="bullets">
-              <li>Add your internship(s), campus roles, analytics work.</li>
+              <li>Managed inventory operations across two manufacturing plants</li>
+              <li>Tracked 100+ SKUs weekly to prevent downtime</li>
+              <li>Coordinated 30+ purchase orders/week; improved urgent turnaround by ~15%</li>
+              <li>Oversaw inbound inventory valued at ~$50K/month</li>
             </ul>
-          </div>
+          </article>
+
+          <article class="tCard reveal">
+            <div class="tCard__top">
+              <h3>Project & Data Coordinator Intern — Center for Cybersecurity & Technology (CCT)</h3>
+              <span class="muted">Aug 2024 – May 2025</span>
+            </div>
+            <ul class="bullets">
+              <li>Analyzed system logs and structured datasets for trends and anomalies</li>
+              <li>Identified and helped resolve 10+ security gaps in simulations</li>
+              <li>Translated technical analysis into clear, stakeholder-ready documentation</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- HONORS -->
-    <section id="honors" class="section">
+    <section id="honors" class="section section--alt">
       <div class="container">
         <div class="section__head">
-          <h2>Honors & Academic Recognition</h2>
-          <p class="muted">Signals that I did the work when nobody was watching.</p>
+          <h2 class="reveal">Honors & Recognition</h2>
+          <p class="muted reveal">Signals that compound over time.</p>
         </div>
 
-        <div class="cards">
-          <article class="proj">
+        <div class="cards3">
+          <article class="cardMini reveal">
             <h3>Dean’s List</h3>
-            <p>Include semesters/years if you want. Keep it factual.</p>
-            <div class="proj__meta"><span class="pill2">Academics</span></div>
+            <p class="muted">Recognized across multiple terms at SUNY Plattsburgh (School of Business & Economics).</p>
           </article>
 
-          <article class="proj">
-            <h3>Honor Societies</h3>
-            <p>Beta Gamma Sigma / Gamma Sigma Alpha / others.</p>
-            <div class="proj__meta"><span class="pill2">Recognition</span></div>
+          <article class="cardMini reveal">
+            <h3>Beta Gamma Sigma</h3>
+            <p class="muted">
+              International honor society for students in AACSB-accredited business schools, recognizing high academic achievement.
+            </p>
           </article>
 
-          <article class="proj">
-            <h3>Awards / Scholarships</h3>
-            <p>Add any scholarships, grants, merit awards.</p>
-            <div class="proj__meta"><span class="pill2">Merit</span></div>
+          <article class="cardMini reveal">
+            <h3>Gamma Sigma Alpha</h3>
+            <p class="muted">
+              National Greek academic honor society recognizing excellence in scholarship and sustained academic performance.
+            </p>
           </article>
+        </div>
+
+        <div class="grid2 mt24">
+          <div class="panel reveal">
+            <h3>Professional Membership</h3>
+            <ul class="bullets">
+              <li><strong>NABA</strong> — National Association of Black Accountants (current member)</li>
+            </ul>
+          </div>
+
+          <div class="panel reveal">
+            <h3>Certifications</h3>
+            <ul class="bullets">
+              <li>Google Cybersecurity Professional Certificate</li>
+              <li>Excel Yellow Belt (McGraw-Hill)</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- LEADERSHIP -->
-    <section id="leadership" class="section section--alt">
+    <section id="leadership" class="section">
       <div class="container">
         <div class="section__head">
-          <h2>Leadership & Roles</h2>
-          <p class="muted">Not “leadership” as a word. Leadership as receipts.</p>
+          <h2 class="reveal">Leadership & Roles</h2>
+          <p class="muted reveal">Stewardship, not buzzwords.</p>
         </div>
 
         <div class="timeline">
-          <div class="role">
-            <div class="role__top">
-              <h3>Organization / Role</h3>
-              <span class="muted">Dates</span>
+          <article class="tCard reveal">
+            <div class="tCard__top">
+              <h3>Treasurer — Alpha Sigma Phi</h3>
+              <span class="muted">Apr 2023 – May 2024</span>
             </div>
             <ul class="bullets">
-              <li>What you owned. What you improved. Who you served.</li>
+              <li>Managed a ~$12K annual budget</li>
+              <li>Built forecasting tools improving planning accuracy by ~25%</li>
             </ul>
-          </div>
+          </article>
 
-          <div class="role">
-            <div class="role__top">
-              <h3>Community / Campus Role</h3>
-              <span class="muted">Dates</span>
+          <article class="tCard reveal">
+            <div class="tCard__top">
+              <h3>President — Gamma Sigma Alpha Honor Society</h3>
+              <span class="muted">Apr 2023 – May 2024</span>
             </div>
             <ul class="bullets">
-              <li>Any mentoring, tutoring, GA, lab work, clubs, etc.</li>
+              <li>Oversaw chapter operations and reporting</li>
+              <li>Coordinated with faculty advisors and executive committees</li>
             </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PASSIONS -->
-    <section id="passions" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Passions</h2>
-          <p class="muted">What I think about when nobody is grading me.</p>
-        </div>
-
-        <div class="chips">
-          <span class="chip">Risk & controls</span>
-          <span class="chip">Business analytics</span>
-          <span class="chip">Finance + markets</span>
-          <span class="chip">Operations & supply chain</span>
-          <span class="chip">Building systems & products</span>
-          <span class="chip">Writing / communicating clearly</span>
+          </article>
         </div>
       </div>
     </section>
@@ -324,27 +407,33 @@
     <section id="projects" class="section section--alt">
       <div class="container">
         <div class="section__head">
-          <h2>Projects</h2>
-          <p class="muted">Announced soon. Shipped beats talked-about.</p>
+          <h2 class="reveal">Projects</h2>
+          <p class="muted reveal">Announced when shipped. Not before.</p>
         </div>
 
-        <div class="cards">
-          <article class="proj">
-            <h3>Analytics Dashboard (Coming Soon)</h3>
-            <p>Executive-ready metrics dashboard with clean definitions.</p>
-            <div class="proj__meta"><span class="pill2">SQL</span><span class="pill2">BI</span></div>
+        <div class="cards3">
+          <article class="cardMini reveal">
+            <h3>Project 1</h3>
+            <p class="muted">To be announced.</p>
+            <div class="metaPills">
+              <span class="pill2">SQL</span><span class="pill2">BI</span>
+            </div>
           </article>
 
-          <article class="proj">
-            <h3>Python Analysis Notebook (Coming Soon)</h3>
-            <p>EDA + validation + insights with reproducibility.</p>
-            <div class="proj__meta"><span class="pill2">Python</span><span class="pill2">pandas</span></div>
+          <article class="cardMini reveal">
+            <h3>Project 2</h3>
+            <p class="muted">To be announced.</p>
+            <div class="metaPills">
+              <span class="pill2">Python</span><span class="pill2">Validation</span>
+            </div>
           </article>
 
-          <article class="proj">
-            <h3>Risk/Controls Case Study (Coming Soon)</h3>
-            <p>Reconciliation workflow + documentation trail.</p>
-            <div class="proj__meta"><span class="pill2">Controls</span><span class="pill2">Excel</span></div>
+          <article class="cardMini reveal">
+            <h3>Project 3</h3>
+            <p class="muted">To be announced.</p>
+            <div class="metaPills">
+              <span class="pill2">Risk</span><span class="pill2">Controls</span>
+            </div>
           </article>
         </div>
       </div>
@@ -354,28 +443,28 @@
     <section id="contact" class="section">
       <div class="container">
         <div class="section__head">
-          <h2>Contact</h2>
-          <p class="muted">Simple. Direct. No forms that nobody reads.</p>
+          <h2 class="reveal">Contact</h2>
+          <p class="muted reveal">Direct lines. No weird forms.</p>
         </div>
 
-        <div class="contact">
-          <div class="panel">
-            <h3>Reach me</h3>
-            <p class="muted">Email is best. LinkedIn is acceptable. Smoke signals are inefficient.</p>
-
-            <div class="contact__links">
-              <a class="btn btn--primary" href="mailto:your.email@example.com">Email</a>
-              <a class="btn btn--ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-              <a class="btn btn--ghost" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <div class="grid2">
+          <div class="panel reveal">
+            <h3>Reach out</h3>
+            <p class="muted">Email is fastest. LinkedIn is the public timeline.</p>
+            <div class="cta">
+              <a class="btn btn--primary" id="btnEmail" href="#">Email</a>
+              <a class="btn btn--ghost" id="btnLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn btn--ghost" id="btnGitHub" href="#" target="_blank" rel="noopener">GitHub</a>
             </div>
+            <p class="muted tiny">Transcripts are private. This page is curated truth.</p>
           </div>
 
-          <div class="panel">
+          <div class="panel reveal">
             <h3>Quick facts</h3>
             <ul class="bullets">
-              <li>Location: add yours</li>
-              <li>Focus: analytics + risk/controls</li>
-              <li>Open to: internships / co-ops</li>
+              <li>From: Addis Ababa, Ethiopia</li>
+              <li>Now: Massachusetts, USA</li>
+              <li>Focus: analytics + governance-minded execution</li>
             </ul>
           </div>
         </div>
@@ -384,8 +473,8 @@
 
     <footer class="footer">
       <div class="container footer__inner">
-        <span>© <span id="year"></span> Michael Tefera</span>
-        <span class="muted">Built to be a living record, not a one-time flex.</span>
+        <span>© <span id="year"></span> Michael Mesfin Tefera</span>
+        <span class="muted">Built to document trajectory, not chase approval.</span>
       </div>
     </footer>
   </main>
