@@ -4,88 +4,260 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Education | Michael Mesfin Tefera</title>
-  <link rel="stylesheet" href="./styles.css?v=8" />
+  <link rel="stylesheet" href="./styles.css?v=13" />
 </head>
 
 <body>
-  <main class="subPage">
+  <main class="subpage">
 
-    <a href="index.html" class="backLink">← Back</a>
-    <h1 class="subTitle">Education</h1>
+    <header class="subHeader">
+      <a class="backLink" href="./index.html">← Back</a>
+      <h1 class="subTitle">Education</h1>
+    </header>
 
-    <!-- SCHOOL LIST -->
-    <section class="eduStack">
+    <!-- 1) EDUCATION -->
+    <section class="block">
+      <h2 class="blockTitle">1) Education</h2>
 
-      <!-- Bentley -->
-      <div class="eduCardRow">
-        <img src="./assets/bentley.png" alt="Bentley University Logo" class="schoolLogo">
-        <div class="eduInfo">
-          <h2>Bentley University</h2>
-          <p>Master of Science in Business Analytics</p>
-          <p>2025 – 2027</p>
-          <p>GPA: 3.56</p>
-        </div>
+      <div class="stack">
+
+        <article class="eduCard">
+          <div class="eduHead">
+            <img class="logo"
+                 src="./assets/logo-bentley.png"
+                 alt="Bentley University logo"
+                 onerror="this.style.display='none';" />
+            <div>
+              <div class="eduSchool">Bentley University</div>
+              <div class="eduMeta">Master of Science in Business Analytics</div>
+              <div class="eduMeta">2025 – 2027</div>
+              <div class="eduMeta">GPA: <strong>3.56</strong></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="eduCard">
+          <div class="eduHead">
+            <img class="logo"
+                 src="./assets/logo-plattsburgh.png"
+                 alt="SUNY Plattsburgh logo"
+                 onerror="this.style.display='none';" />
+            <div>
+              <div class="eduSchool">SUNY Plattsburgh</div>
+              <div class="eduMeta">B.S. International Business</div>
+              <div class="eduMeta">B.S. Management Information Systems</div>
+              <div class="eduMeta">B.S. Business Administration</div>
+              <div class="eduMeta">Minor: Global Supply Chain Management</div>
+              <div class="eduMeta">2021 – 2025</div>
+              <div class="eduMeta">GPA: <strong>3.68</strong></div>
+              <div class="eduHighlight">Graduated <strong>Cum Laude</strong></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="eduCard">
+          <div class="eduHead">
+            <img class="logo"
+                 src="./assets/logo-ethio-parents.png"
+                 alt="Ethio-Parents’ School logo"
+                 onerror="this.style.display='none';" />
+            <div>
+              <div class="eduSchool">Ethio-Parents’ School</div>
+              <div class="eduMeta">Gerji Campus, Addis Ababa</div>
+              <div class="eduMeta">Primary & Secondary Education</div>
+            </div>
+          </div>
+        </article>
+
       </div>
-
-      <!-- SUNY -->
-      <div class="eduCardRow">
-        <img src="./assets/suny.png" alt="SUNY Plattsburgh Logo" class="schoolLogo">
-        <div class="eduInfo">
-          <h2>SUNY Plattsburgh</h2>
-          <p>B.S. International Business</p>
-          <p>B.S. Management Information Systems</p>
-          <p>B.S. Business Administration</p>
-          <p>Minor: Global Supply Chain Management</p>
-          <p>2021 – 2025</p>
-          <p>GPA: 3.68</p>
-          <p class="highlight">Graduated Cum Laude</p>
-        </div>
-      </div>
-
-      <!-- Ethio Parents -->
-      <div class="eduCardRow">
-        <img src="./assets/ethio.png" alt="Ethio-Parents School Logo" class="schoolLogo">
-        <div class="eduInfo">
-          <h2>Ethio-Parents’ School (Gerji Campus)</h2>
-          <p>Primary & Secondary Education</p>
-          <p>Addis Ababa, Ethiopia</p>
-        </div>
-      </div>
-
     </section>
 
-    <!-- HONORS -->
-    <section class="honorsSection">
-      <h2>Academic Honors & Associations</h2>
+    <!-- 2) HONORS & ACHIEVEMENTS -->
+    <section class="block">
+      <h2 class="blockTitle">2) Honors & Achievements</h2>
 
-      <div class="honorItem">
-        <h3>Dean’s List (Multiple Semesters)</h3>
-        <p>
-          Awarded for high academic achievement during a semester, recognizing consistent
-          strong performance across a full academic course load.
-        </p>
+      <div class="stack">
+
+        <!-- Dean's List (4 PDFs) -->
+        <article class="infoCard">
+          <div class="infoHead">
+            <div class="docIcon" aria-hidden="true">PDF</div>
+            <div>
+              <div class="infoTitle">Dean’s List (4 semesters)</div>
+              <div class="infoText">
+                SUNY Plattsburgh, School of Business & Economics. Recognized for outstanding academic performance across four semesters.
+              </div>
+
+              <div class="docMetaRow">
+                <span class="docPill">Dean’s List PDFs:</span>
+                <a class="docLink" href="./assets/deans-list-1.pdf" target="_blank" rel="noopener">Copy 1</a>
+                <a class="docLink" href="./assets/deans-list-2.pdf" target="_blank" rel="noopener">Copy 2</a>
+                <a class="docLink" href="./assets/deans-list-3.pdf" target="_blank" rel="noopener">Copy 3</a>
+                <a class="docLink" href="./assets/deans-list-4.pdf" target="_blank" rel="noopener">Copy 4</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Outstanding Academic Achievement (PDF) -->
+        <article class="infoCard">
+          <div class="infoHead">
+            <div class="docIcon" aria-hidden="true">PDF</div>
+            <div>
+              <div class="infoTitle">Certificate for Outstanding Academic Achievement <span class="mutedInline">May 2025</span></div>
+              <div class="infoText">
+                School of Business & Economics, SUNY Plattsburgh. Awarded in recognition of outstanding accomplishments and contributions within International Business.
+              </div>
+
+              <div class="docMetaRow">
+                <span class="docPill">Certificate PDF:</span>
+                <a class="docLink" href="./assets/outstanding-academic-achievement.pdf" target="_blank" rel="noopener">View PDF</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Beta Gamma Sigma -->
+        <article class="infoCard">
+          <div class="infoHead">
+            <img class="badge"
+                 src="./assets/logo-beta-gamma-sigma.png"
+                 alt="Beta Gamma Sigma logo"
+                 onerror="this.style.display='none';" />
+            <div>
+              <div class="infoTitle">Beta Gamma Sigma (BΓΣ)</div>
+              <div class="infoText">
+                International honor society for business students at AACSB-accredited schools. Membership is selective and typically recognizes
+                top academic performers (often around the top 10% of undergraduates and top 20% of graduate students), based on academic excellence and impact.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Gamma Sigma Alpha -->
+        <article class="infoCard">
+          <div class="infoHead">
+            <img class="badge"
+                 src="./assets/logo-gamma-sigma-alpha.png"
+                 alt="Gamma Sigma Alpha logo"
+                 onerror="this.style.display='none';" />
+            <div>
+              <div class="infoTitle">Gamma Sigma Alpha (ΓΣΑ)</div>
+              <div class="infoText">
+                National academic honor society recognizing sustained scholarship and consistent high academic achievement.
+                Induction is merit-based and reflects long-term excellence, not a single strong semester.
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
-
-      <div class="honorItem">
-        <h3>Beta Gamma Sigma (ΒΓΣ)</h3>
-        <p>
-          International honor society for business students at AACSB-accredited schools.
-          Membership is reserved for the top-performing students — typically the top 10%
-          of undergraduates and top 20% of graduate students — based strictly on academic excellence.
-        </p>
-      </div>
-
-      <div class="honorItem">
-        <h3>Gamma Sigma Alpha (ΓΣΑ)</h3>
-        <p>
-          National honor society recognizing high academic achievement among fraternity
-          and sorority members who maintain strong GPAs while also demonstrating leadership
-          and involvement.
-        </p>
-      </div>
-
     </section>
+
+    <!-- 3) MEMBERSHIPS / ASSOCIATIONS -->
+    <section class="block">
+      <h2 class="blockTitle">3) Memberships / Associations</h2>
+
+      <div class="stack">
+
+        <article class="infoCard">
+          <div class="infoHead">
+            <img class="badge"
+                 src="./assets/logo-alpha-sigma-phi.png"
+                 alt="Alpha Sigma Phi logo"
+                 onerror="this.style.display='none';" />
+            <div>
+              <div class="infoTitle">Alpha Sigma Phi</div>
+              <div class="infoText">
+                Leadership and community involvement through team initiatives, campus engagement, and structured service-oriented work.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="infoCard">
+          <div class="infoHead">
+            <img class="badge"
+                 src="./assets/logo-naba.png"
+                 alt="NABA logo"
+                 onerror="this.style.display='none';" />
+            <div>
+              <div class="infoTitle">NABA (Current Member)</div>
+              <div class="infoText">
+                Professional association focused on accounting, finance, business leadership, and career development through networking, mentorship, and professional programming.
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 4) LICENSES & CERTIFICATIONS -->
+    <section class="block">
+      <h2 class="blockTitle">4) Licenses & Certifications</h2>
+
+      <div class="stack">
+
+        <article class="infoCard">
+          <div class="infoHead">
+            <img class="badge"
+                 src="./assets/logo-google-cybersecurity.png"
+                 alt="Google Cybersecurity Certificate logo"
+                 onerror="this.style.display='none';" />
+            <div>
+              <div class="infoTitle">
+                Google Cybersecurity Certificate <span class="mutedInline">Issued Aug 2024</span>
+              </div>
+              <div class="infoText">
+                Validates foundations in security operations, risk concepts, incident response, and practical security tooling.
+                Signals structured thinking around threats, controls, and operational discipline.
+              </div>
+              <div class="infoLinks">
+                <a class="miniLink" target="_blank" rel="noopener"
+                   href="https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fcoursera.org%2Fshare%2F3a95b56802a6ece38689f39fdbafe06e&urlhash=PCvo&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUxvj%2FcDmRyi%2FPzXwFcG2PQ%3D%3D">
+                  View credential
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="infoCard">
+          <div class="infoHead">
+            <img class="badge"
+                 src="./assets/logo-mcgrawhill-excel.png"
+                 alt="McGraw Hill / SIMnet Excel credential logo"
+                 onerror="this.style.display='none';" />
+            <div>
+              <div class="infoTitle">
+                Applied Intermediate Skills in Microsoft Excel <span class="mutedInline">Issued Nov 2022</span>
+              </div>
+              <div class="infoText">
+                Demonstrates intermediate Excel competence: formulas/functions, structured analysis, data organization, and reporting-ready presentation.
+                Useful for analysts who need clean, auditable outputs that decision-makers can trust.
+              </div>
+              <div class="infoLinks">
+                <a class="miniLink" target="_blank" rel="noopener"
+                   href="https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fcertificates.simnetonline.com%2F3be89a2b-eff0-47a9-9c08-e3c0b13e5f05&urlhash=DsbZ&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BUxvj%2FcDmRyi%2FPzXwFcG2PQ%3D%3D">
+                  View credential
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <footer class="subFooter">
+      <div class="copyright">© <span id="year"></span> Michael Mesfin Tefera</div>
+    </footer>
 
   </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
