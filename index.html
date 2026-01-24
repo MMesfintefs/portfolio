@@ -4,26 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Michael Mesfin Tefera</title>
-
-  <!-- cache-buster -->
-  <link rel="stylesheet" href="./styles.css?v=12" />
+  <link rel="stylesheet" href="./styles.css?v=30" />
 </head>
 
 <body>
   <main class="page">
 
-    <!-- LEFT: portrait -->
+    <!-- LEFT: portrait / placeholder -->
     <section class="left">
       <div class="photoFrame">
         <img
-          class="photoImg"
+          class="portrait"
           src="./assets/michael.jpg"
           alt="Michael Mesfin Tefera"
           onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='grid';"
         />
         <div id="photoFallback" class="photoFallback">
           <div class="fallbackTitle">Photo placeholder</div>
-          <div class="fallbackSub">Put your photo here: <code>assets/michael.jpg</code></div>
+          <div class="fallbackSub">Add later: <code>assets/michael.jpg</code></div>
         </div>
       </div>
     </section>
@@ -35,20 +33,17 @@
         <p class="subtitle">Every Project Has a Story. Here’s Mine</p>
       </header>
 
-      <!-- TOP LINKS (external pages) -->
-      <nav class="topLinks" aria-label="Primary">
+      <nav class="topLinks">
         <a class="topLink" href="./origins.html">Origins</a>
         <a class="topLink" href="./education.html">Education</a>
         <a class="topLink" href="./work.html">My work</a>
       </nav>
 
-      <!-- ASK MICHAEL (placeholder only) -->
-      <section class="askCard" aria-label="Ask Michael">
+      <section class="askCard">
         <div class="askTitle">ASK MICHAEL</div>
         <div class="askHint">
           Try: <span>“Who is Michael?”</span> <span>“Where did he attend?”</span> <span>“What honors?”</span>
         </div>
-
         <div class="askRow">
           <input class="askInput" type="text" placeholder='Ask: "Where did Michael attend?"' disabled />
           <button class="askBtn" type="button" disabled>Ask</button>
@@ -57,9 +52,8 @@
 
       <div class="midLine">Now Let’s Work on Yours</div>
 
-      <!-- FOOTER -->
-      <footer class="footerBar" id="contact" aria-label="Contact">
-        <span class="footerText">Let’s talk</span>
+      <footer class="footerBar" id="contact">
+        <div class="footerText">Let’s talk</div>
         <a class="footerLink" href="mailto:mtefera@falcon.bentley.edu">Email</a>
         <a class="footerLink" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="footerLink" href="https://www.instagram.com/__.mikee15/" target="_blank" rel="noopener">Instagram</a>
