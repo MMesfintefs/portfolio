@@ -4,13 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Michael Mesfin Tefera</title>
-  <link rel="stylesheet" href="./styles.css?v=30" />
+
+  <!-- cache-buster -->
+  <link rel="stylesheet" href="./styles.css?v=999" />
 </head>
 
 <body>
   <main class="page">
 
-    <!-- LEFT: portrait / placeholder -->
     <section class="left">
       <div class="photoFrame">
         <img
@@ -21,12 +22,11 @@
         />
         <div id="photoFallback" class="photoFallback">
           <div class="fallbackTitle">Photo placeholder</div>
-          <div class="fallbackSub">Add later: <code>assets/michael.jpg</code></div>
+          <div class="fallbackSub">Check filename + path: <code>assets/michael.jpg</code></div>
         </div>
       </div>
     </section>
 
-    <!-- RIGHT: hero -->
     <section class="right">
       <header class="heroHeader">
         <h1 class="title">MICHAEL MESFIN TEFERA</h1>
@@ -44,6 +44,7 @@
         <div class="askHint">
           Try: <span>“Who is Michael?”</span> <span>“Where did he attend?”</span> <span>“What honors?”</span>
         </div>
+
         <div class="askRow">
           <input class="askInput" type="text" placeholder='Ask: "Where did Michael attend?"' disabled />
           <button class="askBtn" type="button" disabled>Ask</button>
