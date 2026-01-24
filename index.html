@@ -10,75 +10,74 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- cache-buster -->
   <link rel="stylesheet" href="./styles.css?v=999" />
 </head>
 
 <body>
-  <main class="page">
-
-    <section class="left">
-      <div class="photoFrame">
-        <img
-          class="portrait"
-          src="./assets/michael.jpg"
-          alt="Michael Mesfin Tefera"
-          onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='grid';"
-        />
-        <div id="photoFallback" class="photoFallback">
-          <div class="fallbackTitle">Photo placeholder</div>
-          <div class="fallbackSub">Check filename + path: <code>assets/michael.jpg</code></div>
+  <main class="wrap">
+    <section class="layout">
+      <!-- LEFT: PHOTO -->
+      <aside class="leftCol">
+        <div class="photoCard">
+          <img
+            class="portrait"
+            src="./assets/michael.jpg"
+            alt="Michael Mesfin Tefera"
+          />
         </div>
-      </div>
-    </section>
+      </aside>
 
-    <section class="right">
-      <header class="heroHeader">
-        <h1 class="title">MICHAEL MESFIN TEFERA</h1>
-        <p class="subtitle">Every Project Has a Story. Here’s Mine</p>
-      </header>
+      <!-- RIGHT: NAME + LINKS + ASK -->
+      <section class="rightCol">
+        <header class="hero">
+          <h1 class="name">Michael Mesfin Tefera</h1>
+          <p class="tagline">Every Project Has a Story. Here’s Mine</p>
+        </header>
 
-      <!-- Order matches your screenshot -->
-      <nav class="topLinks">
-        <a class="topLink" href="./education.html">Education</a>
-        <a class="topLink" href="./origins.html">Origins</a>
-        <a class="topLink" href="./work.html">My work</a>
-      </nav>
+        <nav class="primaryLinks" aria-label="Primary">
+          <a class="primaryLink" href="./origins.html">Origins</a>
+          <a class="primaryLink" href="./education.html">Education</a>
+          <a class="primaryLink" href="./work.html">My Work</a>
+        </nav>
 
-      <!-- Ask Michael (styled like screenshot + wired for JS if you enable it later) -->
-      <section class="askCard">
-        <div class="askTitle">ASK MICHAEL</div>
+        <!-- AI placeholder: subtle, not the main character -->
+        <section class="askBox" aria-label="Ask Michael">
+          <div class="askTitle">ASK MICHAEL</div>
+          <div class="askHint">
+            Coming soon. Try later:
+            <span>“Who is Michael?”</span>
+            <span>“Where did he attend?”</span>
+            <span>“What honors?”</span>
+          </div>
 
-        <div class="askHint">
-          Try:
-          <span>“Who is Michael?”</span>
-          <span>“Where did he attend?”</span>
-          <span>“What honors?”</span>
-        </div>
+          <div class="askRow">
+            <input
+              id="askInput"
+              class="askInput"
+              type="text"
+              placeholder='Ask: "Where did Michael attend?"'
+              disabled
+            />
+            <button id="askBtn" class="askBtn" type="button" disabled>Ask</button>
+          </div>
 
-        <div class="askRow">
-          <input id="askInput" class="askInput" type="text" placeholder='Ask: "Where did Michael attend?"' disabled />
-          <button id="askBtn" class="askBtn" type="button" disabled>Ask</button>
-        </div>
+          <div id="askAnswer" class="askAnswer" aria-live="polite"></div>
+        </section>
 
-        <div id="askAnswer" class="askAnswer" aria-live="polite"></div>
+        <div class="collabLine">Now Let’s Work on Yours</div>
+
+        <footer class="footer">
+          <a class="footerItem" href="#contact">Let’s talk</a>
+          <a class="footerItem" href="mailto:mtefera@falcon.bentley.edu">Email</a>
+          <a class="footerItem" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="footerItem" href="https://www.instagram.com/__.mikee15/" target="_blank" rel="noopener">Instagram</a>
+        </footer>
+
+        <div id="contact" class="fineprint">© <span id="year"></span></div>
       </section>
-
-      <div class="midLine">Now Let’s Work on Yours</div>
-
-      <footer class="footerBar" id="contact">
-        <div class="footerText">Let’s talk</div>
-        <a class="footerLink" id="btnEmail" href="mailto:mtefera@falcon.bentley.edu">Email</a>
-        <a class="footerLink" id="btnLinkedIn" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="footerLink" href="https://www.instagram.com/__.mikee15/" target="_blank" rel="noopener">Instagram</a>
-      </footer>
-
-      <div class="copyright">© <span id="year"></span></div>
     </section>
-
   </main>
 
-  <!-- keep file name the same -->
   <script src="./script.js?v=999"></script>
 </body>
 </html>
