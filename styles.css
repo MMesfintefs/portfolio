@@ -1,10 +1,10 @@
 :root{
-  --bg: #050706;
   --ink: rgba(255,255,255,.92);
   --muted: rgba(255,255,255,.72);
   --muted2: rgba(255,255,255,.55);
   --line: rgba(255,255,255,.12);
-  --card: rgba(0,0,0,.35);
+  --card: rgba(0,0,0,.22);
+  --card2: rgba(0,0,0,.28);
   --green: #29c36a;
   --shadow: 0 24px 80px rgba(0,0,0,.55);
 }
@@ -22,28 +22,26 @@ body{
   font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
 }
 
-/* =========================================================
-   FRONT PAGE (RESTORED)
-========================================================= */
+/* =========================
+   FRONT PAGE LAYOUT
+========================= */
 .page{
   min-height: 100vh;
-  width: min(1200px, 94vw);
+  width: min(1260px, 95vw);
   margin: 0 auto;
   padding: 26px 0;
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 34px;
+  grid-template-columns: 1.05fr 1.25fr;
+  gap: 40px;
   align-items: center;
 }
-
-.left, .right{ min-width: 0; }
 
 .photoFrame{
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.22);
+  background: rgba(0,0,0,.18);
   overflow: hidden;
   box-shadow: 0 18px 70px rgba(0,0,0,.35);
   display: grid;
@@ -57,6 +55,7 @@ body{
   display: block;
 }
 
+/* placeholder is VISIBLE until image loads */
 .photoFallback{
   width: 100%;
   height: 100%;
@@ -69,45 +68,55 @@ body{
 
 .fallbackTitle{ font-size: 18px; font-weight: 700; }
 .fallbackSub{ margin-top: 8px; color: rgba(255,255,255,.55); }
+.fallbackSub code{
+  padding: 3px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.20);
+}
 
+/* RIGHT SIDE */
 .heroHeader{
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 .title{
   margin: 0;
-  font-size: clamp(34px, 4vw, 58px);
+  font-size: clamp(44px, 4.2vw, 66px);
   letter-spacing: .06em;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .subtitle{
   margin: 10px 0 0;
   color: var(--muted);
-  font-size: clamp(16px, 1.6vw, 20px);
+  font-size: clamp(16px, 1.5vw, 22px);
 }
 
+/* BIG NAV LINKS like screenshot */
 .topLinks{
   display:flex;
-  gap: 34px;
-  margin: 24px 0 20px;
+  justify-content: space-between;
+  gap: 28px;
+  margin: 28px 0 26px;
 }
 
 .topLink{
-  color: rgba(255,255,255,.86);
+  color: rgba(255,255,255,.90);
   text-decoration: none;
-  font-size: clamp(22px, 2.2vw, 38px);
+  font-size: clamp(30px, 2.6vw, 44px);
   font-weight: 600;
 }
 
 .topLink:hover{ color: var(--green); }
 
+/* ASK CARD centered-ish and wide */
 .askCard{
-  margin-top: 10px;
+  width: min(860px, 100%);
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.22);
-  padding: 16px 16px 14px;
+  background: var(--card);
+  padding: 18px 18px 16px;
   box-shadow: 0 18px 60px rgba(0,0,0,.28);
 }
 
@@ -115,27 +124,27 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   letter-spacing: .14em;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 12px;
   color: rgba(255,255,255,.78);
 }
 
 .askHint{
-  margin-top: 8px;
-  color: rgba(255,255,255,.70);
+  margin-top: 10px;
+  color: rgba(255,255,255,.72);
   font-size: 15px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .askHint span{
-  color: rgba(255,255,255,.82);
+  color: rgba(255,255,255,.84);
   margin-right: 10px;
 }
 
 .askRow{
-  margin-top: 12px;
+  margin-top: 14px;
   display:flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .askInput{
@@ -144,7 +153,7 @@ body{
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(0,0,0,.18);
   color: rgba(255,255,255,.85);
-  padding: 12px 12px;
+  padding: 12px 14px;
   font-size: 14px;
   outline: none;
 }
@@ -155,19 +164,21 @@ body{
   background: rgba(10,90,55,.22);
   color: rgba(255,255,255,.82);
   padding: 12px 18px;
-  font-weight: 700;
+  font-weight: 800;
   cursor: not-allowed;
 }
 
+/* mid headline */
 .midLine{
-  margin: 18px 0 22px;
+  margin: 26px 0 22px;
   text-align: center;
   color: rgba(255,255,255,.78);
-  font-size: clamp(16px, 1.6vw, 22px);
+  font-size: clamp(18px, 1.7vw, 26px);
 }
 
+/* FOOTER row like screenshot */
 .footerBar{
-  margin-top: 24px;
+  margin-top: 40px;
   padding-top: 18px;
   border-top: 1px solid rgba(255,255,255,.12);
   display:flex;
@@ -177,14 +188,16 @@ body{
 }
 
 .footerText{
-  color: rgba(255,255,255,.78);
-  font-size: 18px;
+  color: rgba(255,255,255,.82);
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .footerLink{
   color: rgba(255,255,255,.86);
   text-decoration: none;
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .footerLink:hover{ color: var(--green); }
@@ -196,202 +209,15 @@ body{
   font-size: 14px;
 }
 
-/* Responsive */
-@media (max-width: 900px){
+/* MOBILE */
+@media (max-width: 980px){
   .page{
     grid-template-columns: 1fr;
     gap: 22px;
     align-items: start;
+    padding: 18px 0;
   }
-  .topLinks{ justify-content: space-between; gap: 18px; }
+  .topLinks{ justify-content: space-between; gap: 16px; }
   .footerBar{ flex-wrap: wrap; justify-content: flex-start; }
-}
-
-/* =========================================================
-   SUBPAGES (Education, Origins, Work)
-========================================================= */
-.subpage{
-  width: min(1100px, 94vw);
-  margin: 0 auto;
-  padding: 28px 0 64px;
-}
-
-.subHeader{
-  display:flex;
-  align-items:flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.backLink{
-  color: var(--ink);
-  text-decoration:none;
-  font-size: 18px;
-  padding: 10px 0;
-}
-.backLink:hover{ color: var(--green); }
-
-.subTitle{
-  margin: 0;
-  font-size: clamp(34px, 4vw, 54px);
-  letter-spacing: .02em;
-}
-
-.block{
-  margin-top: 22px;
-  padding: 20px;
-  border-radius: 18px;
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.18));
-  box-shadow: 0 18px 60px rgba(0,0,0,.35);
-}
-
-.blockTitle{
-  margin: 0 0 16px;
-  font-size: 22px;
-  color: rgba(255,255,255,.88);
-}
-
-.stack{
-  display:flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.eduCard, .infoCard{
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.22);
-  padding: 16px;
-}
-
-.eduHead, .infoHead{
-  display:flex;
-  gap: 14px;
-  align-items:flex-start;
-}
-
-.logo{
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  border-radius: 12px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
-}
-
-.badge{
-  width: 66px;
-  height: 66px;
-  object-fit: contain;
-  border-radius: 14px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
-}
-
-.docIcon{
-  width: 66px;
-  height: 66px;
-  border-radius: 14px;
-  display:grid;
-  place-items:center;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  font-weight: 800;
-  letter-spacing: .08em;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
-  color: rgba(255,255,255,.85);
-}
-
-.eduSchool{
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.eduMeta{
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.35;
-}
-
-.eduHighlight{
-  margin-top: 8px;
-  font-size: 16px;
-  color: rgba(60,255,160,.78);
-  font-weight: 700;
-}
-
-.infoTitle{
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.infoText{
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.45;
-}
-
-.mutedInline{
-  color: var(--muted2);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  font-size: 13px;
-  margin-left: 8px;
-}
-
-.infoLinks{ margin-top: 10px; }
-
-.miniLink{
-  display:inline-block;
-  color: rgba(255,255,255,.88);
-  text-decoration:none;
-  border-bottom: 1px solid rgba(60,255,160,.35);
-  padding-bottom: 2px;
-}
-.miniLink:hover{ color: var(--green); border-bottom-color: var(--green); }
-
-.docMetaRow{
-  margin-top: 12px;
-  display:flex;
-  flex-wrap:wrap;
-  gap: 10px;
-  align-items:center;
-}
-
-.docPill{
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  font-size: 12px;
-  letter-spacing: .10em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.70);
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.18);
-}
-
-.docLink{
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  font-size: 14px;
-  font-weight: 700;
-  color: rgba(255,255,255,.88);
-  text-decoration:none;
-  padding: 8px 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(60,255,160,.20);
-  background: rgba(10,90,55,.22);
-}
-.docLink:hover{
-  color: var(--green);
-  border-color: rgba(60,255,160,.35);
-  background: rgba(10,90,55,.30);
-}
-
-.subFooter{
-  margin-top: 26px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
+  .footerLink, .footerText{ font-size: 18px; }
 }
