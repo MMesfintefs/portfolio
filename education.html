@@ -4,61 +4,109 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Education | Michael Mesfin Tefera</title>
-  <link rel="stylesheet" href="./styles.css?v=9" />
+  <link rel="stylesheet" href="./styles.css?v=999" />
+  <style>
+    /* Hard fallback so it NEVER shows blank/coming soon due to missing CSS */
+    body{
+      margin:0;
+      color:#f2f2f2;
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(1200px 900px at 55% 45%, rgba(0,110,70,0.35), rgba(0,0,0,0.95) 70%),
+        #050505;
+      min-height:100vh;
+    }
+    .wrap{max-width:1050px; margin:0 auto; padding:28px 22px 80px;}
+    .back{display:inline-block; color:#f2f2f2; text-decoration:none; opacity:.9; margin-bottom:18px;}
+    .back:hover{opacity:1; text-decoration:underline;}
+    h1{font-size:56px; margin:6px 0 6px; letter-spacing:.5px;}
+    .sub{opacity:.75; margin:0 0 34px; font-size:18px;}
+    .grid{display:flex; flex-direction:column; gap:26px;}
+    .card{
+      display:flex; gap:22px; align-items:center;
+      background: rgba(0,0,0,0.35);
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:16px;
+      padding:22px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      backdrop-filter: blur(6px);
+    }
+    .logo{
+      width:120px; height:auto;
+      background:#fff;
+      padding:10px;
+      border-radius:12px;
+      flex:0 0 auto;
+    }
+    .info h2{margin:0; font-size:24px;}
+    .line{margin:6px 0; opacity:.9;}
+    .muted{opacity:.75; font-size:14px; margin-top:6px;}
+    .chips{margin-top:12px; display:flex; flex-wrap:wrap; gap:10px;}
+    .chip{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size:13px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(0,255,170,0.18);
+      background: rgba(0,120,70,0.22);
+    }
+  </style>
 </head>
 
 <body>
-  <div class="storyPage">
+  <div class="wrap">
+    <a class="back" href="./index.html">← Back</a>
 
-    <a class="backLink" href="./index.html">← Back</a>
+    <h1>Education</h1>
+    <p class="sub">Schools attended, honors, and GPA. No essays. No fluff.</p>
 
-    <h1 class="storyTitle">Education</h1>
-    <p class="storyTag">Academic Background & Honors</p>
+    <div class="grid">
 
-    <div class="eduGrid">
-
-      <!-- BENTLEY -->
-      <div class="eduCard">
-        <img src="./assets/bentley.png" alt="Bentley University logo" class="eduLogo" />
-        <div class="eduInfo">
+      <!-- Bentley -->
+      <div class="card">
+        <img class="logo" src="./assets/bentley.png" alt="Bentley University logo">
+        <div class="info">
           <h2>Bentley University</h2>
-          <p class="eduDegree">M.S. in Business Analytics</p>
-          <p class="eduYears">2025 – Present</p>
-          <p class="eduGpa">GPA: —</p>
+          <div class="line">M.S. in Business Analytics</div>
+          <div class="line">2025 – Present</div>
+          <div class="line"><strong>GPA:</strong> —</div>
         </div>
       </div>
 
-      <!-- PLATTSBURGH -->
-      <div class="eduCard">
-        <img src="./assets/plattsburgh.png" alt="SUNY Plattsburgh logo" class="eduLogo" />
-        <div class="eduInfo">
-          <h2>State University of New York at Plattsburgh</h2>
-          <p class="eduDegree">B.S. International Business</p>
-          <p class="eduDegree">B.S. Management Information Systems</p>
-          <p class="eduDegree">B.S. Business Administration</p>
-          <p class="eduYears">2021 – 2024</p>
-          <p class="eduGpa">GPA: 3.64</p>
+      <!-- SUNY Plattsburgh -->
+      <div class="card">
+        <img class="logo" src="./assets/plattsburgh.png" alt="SUNY Plattsburgh logo">
+        <div class="info">
+          <h2>SUNY Plattsburgh</h2>
+          <div class="line">B.S. International Business</div>
+          <div class="line">B.S. Management Information Systems</div>
+          <div class="line">B.S. Business Administration</div>
+          <div class="line">Minor: Global Supply Chain Management</div>
+          <div class="line">2021 – 2024</div>
+          <div class="line"><strong>GPA:</strong> 3.64</div>
 
-          <div class="honors">
-            <span>Dean’s List (Multiple Terms)</span>
-            <span>Beta Gamma Sigma</span>
-            <span>Gamma Sigma Alpha</span>
+          <div class="chips">
+            <span class="chip">Dean’s List (4 terms)</span>
+            <span class="chip">Beta Gamma Sigma</span>
+            <span class="chip">Gamma Sigma Alpha</span>
+            <span class="chip">NABA (Current Member)</span>
           </div>
+
+          <div class="muted">Logos load from <code>assets/</code>. If a logo doesn’t show, the filename is wrong.</div>
         </div>
       </div>
 
-      <!-- ETHIO-PARENTS -->
-      <div class="eduCard">
-        <img src="./assets/ethio-parents.png" alt="Ethio-Parents School logo" class="eduLogo" />
-        <div class="eduInfo">
-          <h2>Ethio-Parents’ School — Gerji Campus</h2>
-          <p class="eduDegree">Primary & Secondary Education</p>
-          <p class="eduYears">Addis Ababa, Ethiopia</p>
+      <!-- Ethio-Parents -->
+      <div class="card">
+        <img class="logo" src="./assets/ethio-parents.png" alt="Ethio-Parents’ School logo">
+        <div class="info">
+          <h2>Ethio-Parents’ School (Gerji Campus)</h2>
+          <div class="line">Primary & Secondary Education</div>
+          <div class="line">Addis Ababa, Ethiopia</div>
         </div>
       </div>
 
     </div>
-
   </div>
 </body>
 </html>
