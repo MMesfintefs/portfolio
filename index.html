@@ -8,116 +8,66 @@
 </head>
 
 <body>
-  <header class="top">
-    <div class="brand">
-      <div class="name">MICHAEL MESFIN TEFERA</div>
-      <div class="tagline">Every Project Has a Story. Here’s Mine</div>
-    </div>
-
-    <nav class="nav">
-      <a href="#origins">Origins</a>
-      <a href="#education">Education</a>
-      <a href="#work">My work</a>
-    </nav>
-  </header>
-
-  <main class="shell">
+  <main class="page">
     <!-- LEFT: portrait -->
-    <aside class="portraitCol">
-      <!-- Put your photo later: assets/michael.jpg -->
-      <div class="portraitFrame">
+    <section class="left">
+      <div class="photoFrame">
+        <!-- Put your real photo later: assets/michael.jpg -->
         <img
           src="assets/michael.jpg"
-          alt="Michael Mesfin Tefera portrait"
-          onerror="this.style.display='none'; this.parentElement.classList.add('portraitFallback');"
+          alt="Michael Mesfin Tefera"
+          onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='grid';"
         />
-        <div class="portraitPlaceholder">
-          <div class="phTitle">Portrait</div>
-          <div class="phSub">Add later: <code>assets/michael.jpg</code></div>
+        <div id="photoFallback" class="photoFallback">
+          <div class="fallbackTitle">Photo placeholder</div>
+          <div class="fallbackSub">Add later: <code>assets/michael.jpg</code></div>
         </div>
       </div>
-    </aside>
+    </section>
 
-    <!-- RIGHT: content -->
-    <section class="contentCol">
-      <section id="origins" class="section">
-        <h2>Origins</h2>
-        <p class="lede">
-          Born in Addis Ababa, Ethiopia. Moved to the U.S. in Fall 2021 to pursue a BA and build a career at the intersection of business, systems, and analytics.
-        </p>
+    <!-- RIGHT: hero -->
+    <section class="right">
+      <header class="heroHeader">
+        <h1 class="title">MICHAEL MESFIN TEFERA</h1>
+        <p class="subtitle">Every Project Has a Story. Here’s Mine</p>
+      </header>
 
-        <div class="card">
-          <h3>What I optimize for</h3>
-          <ul>
-            <li>Structured decision-making under constraints</li>
-            <li>Risk-aware execution and governance-minded analytics</li>
-            <li>Clear documentation and stakeholder-ready storytelling</li>
-            <li>Systems thinking: how parts connect and fail</li>
-          </ul>
+      <!-- TOP LINKS -->
+      <nav class="topLinks">
+        <a class="topLink" href="origins.html">Origins</a>
+        <a class="topLink" href="education.html">Education</a>
+        <a class="topLink" href="work.html">My work</a>
+      </nav>
+
+      <!-- CHATBOX PLACEHOLDER (NO BOT YET) -->
+      <section class="askCard" aria-label="Ask Michael box">
+        <div class="askTitle">ASK MICHAEL</div>
+        <div class="askHint">
+          Try: <span>“Who is Michael?”</span> <span>“Where did he attend?”</span> <span>“What honors?”</span>
+        </div>
+
+        <div class="askRow">
+          <input class="askInput" type="text" placeholder='Ask: "Where did Michael attend?"' disabled />
+          <button class="askBtn" type="button" disabled>Ask</button>
         </div>
       </section>
 
-      <section id="education" class="section">
-        <h2>Education</h2>
+      <div class="midLine">Now Let’s Work on Yours</div>
 
-        <div class="grid2">
-          <div class="card">
-            <h3>Bentley University — MSBA</h3>
-            <p class="muted">GPA: <span class="pill">[Add MSBA GPA]</span></p>
-            <p class="muted">Focus: Business Analytics • Systems • Risk • Governance</p>
-          </div>
+      <!-- FOOTER LINKS (EXACTLY LIKE MOCKUP) -->
+      <footer class="footerBar">
+        <a class="footerLink" href="#contact">Let’s talk</a>
+        <a class="footerLink" href="mailto:mtefera@falcon.bentley.edu">Email</a>
+        <a class="footerLink" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footerLink" href="#" target="_blank" rel="noopener">Instagram</a>
+      </footer>
 
-          <div class="card">
-            <h3>SUNY Plattsburgh — BA</h3>
-            <p class="muted">GPA: <span class="pill">[Add BA GPA]</span></p>
-            <p class="muted">Majors: International Business • MIS • Business Administration</p>
-            <p class="muted">Minor: Global Supply Chain Management</p>
-          </div>
-        </div>
-
-        <div class="card logoRow">
-          <img src="assets/ethio-parents.png" alt="Ethio-Parents’ School logo"
-               onerror="this.style.display='none'">
-          <img src="assets/plattsburgh.png" alt="SUNY Plattsburgh logo"
-               onerror="this.style.display='none'">
-          <img src="assets/bentley.png" alt="Bentley University logo"
-               onerror="this.style.display='none'">
-        </div>
-      </section>
-
-      <section id="work" class="section">
-        <h2>My work</h2>
-        <p class="lede">Projects and case studies will publish here as they ship.</p>
-
-        <div class="card">
-          <h3>In the meantime</h3>
-          <p class="muted">
-            I’m building a public work portfolio. For now, use the links below to view my timeline and contact me.
-          </p>
-
-          <div class="btnRow">
-            <a class="btn btn--primary" href="https://mmesfintefs.github.io/portfolio/" target="_blank" rel="noopener">
-              Portfolio (this site)
-            </a>
-            <a class="btn btn--ghost" href="#" id="workExternal" target="_blank" rel="noopener">
-              External work site (coming)
-            </a>
-          </div>
-        </div>
-      </section>
+      <div id="contact" class="copyright">© <span id="year"></span></div>
     </section>
   </main>
 
-  <footer class="footerBar" id="contact">
-    <div class="footerLeft">Now Let’s Work on Yours</div>
-    <div class="footerLinks">
-      <a href="#contact">Let’s talk</a>
-      <a href="mailto:mtefera@falcon.bentley.edu">Email</a>
-      <a href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#" id="igLink" target="_blank" rel="noopener">Instagram</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
