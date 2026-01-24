@@ -19,7 +19,7 @@ body{
     radial-gradient(1200px 900px at 20% 45%, rgba(20,160,95,.36), rgba(0,0,0,0) 60%),
     radial-gradient(900px 700px at 78% 28%, rgba(10,120,70,.26), rgba(0,0,0,0) 55%),
     linear-gradient(180deg, var(--bg1), var(--bg2) 55%, var(--bg1));
-  font-family: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .wrap{
@@ -29,7 +29,7 @@ body{
   min-height: 100vh;
 }
 
-/* OUTLINE LAYOUT: Left photo, right content */
+/* Outline layout: left photo, right content */
 .layout{
   display:grid;
   grid-template-columns: 420px 1fr;
@@ -38,7 +38,7 @@ body{
 }
 
 /* LEFT */
-.leftCol{ padding-top: 118px; } /* pushes portrait down like your reference */
+.leftCol{ padding-top: 118px; }
 
 .photoCard{
   width: 100%;
@@ -63,18 +63,18 @@ body{
   align-items: flex-start;
 }
 
-.hero{
-  margin-top: 0;
-}
-
+/* Name must stay on one line */
 .name{
   margin:0;
-  font-family: "Cinzel Decorative", ui-serif, Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(56px, 5.2vw, 86px);
+  font-size: clamp(54px, 5.2vw, 82px);
   font-weight: 700;
   letter-spacing: .02em;
   line-height: 1.02;
   text-transform: uppercase;
+
+  white-space: nowrap;      /* keeps one line */
+  overflow: hidden;         /* prevents breaking layout */
+  text-overflow: ellipsis;  /* safety on small screens */
 }
 
 .tagline{
@@ -83,7 +83,7 @@ body{
   font-size: clamp(18px, 1.6vw, 26px);
 }
 
-/* Three big links on the right */
+/* Big links */
 .primaryLinks{
   margin-top: 26px;
   display:flex;
@@ -97,81 +97,56 @@ body{
   font-size: clamp(30px, 2.4vw, 44px);
   font-weight: 700;
 }
-
 .primaryLink:hover{ color: var(--green); }
 
-/* Ask box: premium, smaller presence */
+/* Smaller Ask box: only input + button */
 .askBox{
-  margin-top: 28px;
-  width: min(900px, 100%);
-  border-radius: 18px;
+  margin-top: 22px;
+  width: min(640px, 100%); /* smaller than before */
+  border-radius: 16px;
   border: 1px solid rgba(255,255,255,.14);
-  background: var(--card);
-  padding: 16px 18px 16px;
+  background: rgba(0,0,0,.18);
+  padding: 12px;
   backdrop-filter: blur(6px);
 }
 
-.askTitle{
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 12px;
-  color: rgba(255,255,255,.78);
-}
-
-.askHint{
-  margin-top: 10px;
-  color: rgba(255,255,255,.72);
-  font-size: 15px;
-  line-height: 1.45;
-}
-
-.askHint span{
-  margin-left: 10px;
-  color: rgba(255,255,255,.86);
-  white-space: nowrap;
-}
-
 .askRow{
-  margin-top: 12px;
   display:flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
 }
 
 .askInput{
   flex:1;
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.18);
+  background: rgba(0,0,0,.16);
   color: rgba(255,255,255,.85);
-  padding: 12px 14px;
+  padding: 10px 12px;
   font-size: 14px;
   outline: none;
-  opacity: .80;
+  opacity: .82;
 }
 
 .askBtn{
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid rgba(60,255,160,.18);
   background: rgba(10,90,55,.22);
   color: rgba(255,255,255,.82);
-  padding: 12px 18px;
-  font-weight: 800;
+  padding: 10px 16px;
+  font-weight: 700;
   cursor: not-allowed;
   opacity: .85;
 }
 
 .askAnswer{
-  margin-top: 12px;
+  margin-top: 10px;
   color: rgba(255,255,255,.80);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   font-size: 14px;
   line-height: 1.55;
 }
 
-/* Collab line centered under right column */
+/* Centered collaboration line */
 .collabLine{
   width: min(900px, 100%);
   margin-top: 30px;
@@ -199,7 +174,6 @@ body{
   font-size: 24px;
   font-weight: 700;
 }
-
 .footerItem:hover{ color: var(--green); }
 
 .fineprint{
@@ -207,7 +181,6 @@ body{
   width: min(900px, 100%);
   text-align: center;
   color: var(--muted2);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   font-size: 14px;
 }
 
