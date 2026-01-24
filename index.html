@@ -4,17 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Michael Mesfin Tefera</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- IMPORTANT: cache-buster so GitHub Pages stops serving old CSS -->
+  <link rel="stylesheet" href="./styles.css?v=7" />
 </head>
 
 <body>
   <main class="page">
+
     <!-- LEFT: portrait -->
     <section class="left">
       <div class="photoFrame">
-        <!-- Put your real photo later: assets/michael.jpg -->
         <img
-          src="assets/michael.jpg"
+          src="./assets/michael.jpg"
           alt="Michael Mesfin Tefera"
           onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='grid';"
         />
@@ -32,15 +34,15 @@
         <p class="subtitle">Every Project Has a Story. Here’s Mine</p>
       </header>
 
-      <!-- TOP LINKS -->
+      <!-- TOP LINKS (external/extension pages) -->
       <nav class="topLinks">
-        <a class="topLink" href="origins.html">Origins</a>
-        <a class="topLink" href="education.html">Education</a>
-        <a class="topLink" href="work.html">My work</a>
+        <a class="topLink" href="./origins.html">Origins</a>
+        <a class="topLink" href="./education.html">Education</a>
+        <a class="topLink" href="./work.html">My work</a>
       </nav>
 
-      <!-- CHATBOX PLACEHOLDER (NO BOT YET) -->
-      <section class="askCard" aria-label="Ask Michael box">
+      <!-- ASK MICHAEL (placeholder only for now) -->
+      <section class="askCard">
         <div class="askTitle">ASK MICHAEL</div>
         <div class="askHint">
           Try: <span>“Who is Michael?”</span> <span>“Where did he attend?”</span> <span>“What honors?”</span>
@@ -54,16 +56,17 @@
 
       <div class="midLine">Now Let’s Work on Yours</div>
 
-      <!-- FOOTER LINKS (EXACTLY LIKE MOCKUP) -->
-      <footer class="footerBar">
+      <!-- FOOTER LINKS -->
+      <footer class="footerBar" id="contact">
         <a class="footerLink" href="#contact">Let’s talk</a>
         <a class="footerLink" href="mailto:mtefera@falcon.bentley.edu">Email</a>
         <a class="footerLink" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="footerLink" href="#" target="_blank" rel="noopener">Instagram</a>
       </footer>
 
-      <div id="contact" class="copyright">© <span id="year"></span></div>
+      <div class="copyright">© <span id="year"></span></div>
     </section>
+
   </main>
 
   <script>
