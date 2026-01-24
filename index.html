@@ -5,56 +5,58 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Michael Mesfin Tefera</title>
 
-  <link rel="stylesheet" href="/portfolio/styles.css?v=1200" />
+  <link rel="stylesheet" href="/portfolio/styles.css?v=1300" />
 </head>
 
 <body>
   <main class="wrap">
 
-    <!-- FULL-WIDTH HEADER (spans left + right) -->
-    <header class="topHeader">
-      <h1 class="name">MICHAEL MESFIN TEFERA</h1>
-      <p class="tagline">Every Project Has a Story. Here’s Mine</p>
-    </header>
-
-    <!-- MAIN TWO-COLUMN CONTENT -->
-    <section class="layout">
-      <!-- LEFT: portrait -->
-      <aside class="leftCol">
+    <section class="heroGrid">
+      <!-- LEFT: portrait card -->
+      <aside class="leftPane">
         <div class="photoCard">
           <img class="portrait" src="/portfolio/assets/michael.jpg" alt="Michael Mesfin Tefera" />
         </div>
       </aside>
 
-      <!-- RIGHT: links + ask -->
-      <section class="rightCol">
-        <nav class="primaryLinks" aria-label="Primary">
-          <a class="primaryLink" href="/portfolio/origins.html">Origins</a>
-          <a class="primaryLink" href="/portfolio/education.html">Education</a>
-          <a class="primaryLink" href="/portfolio/work.html">My Work</a>
+      <!-- RIGHT: name + tagline + nav + ask -->
+      <section class="rightPane">
+        <h1 class="name">Michael Mesfin Tefera</h1>
+
+        <p class="tagline">Every Project Has a Story. Here’s Mine</p>
+
+        <nav class="navLinks" aria-label="Primary">
+          <a class="navLink" href="/portfolio/education.html">Education</a>
+          <a class="navLink" href="/portfolio/origins.html">Origins</a>
+          <a class="navLink" href="/portfolio/work.html">Experience</a>
+          <a class="navLink" href="/portfolio/work.html">My work</a>
         </nav>
 
-        <!-- Ask box (small, no examples, no extra text) -->
-        <section class="askBox" aria-label="Ask Michael">
-          <div class="askRow">
-            <input id="askInput" class="askInput" type="text" placeholder='Ask about Michael…' disabled />
-            <button id="askBtn" class="askBtn" type="button" disabled>Ask</button>
+        <!-- Ask card (matches screenshot) -->
+        <section class="askCard" aria-label="Ask Michael">
+          <div class="askTitle">ASK MICHAEL</div>
+
+          <div class="askExamples">
+            Try: “Who is Michael?” “Where did he attend?” “What honors?”
           </div>
 
-          <div id="askAnswer" class="askAnswer" aria-live="polite"></div>
+          <div class="askRow">
+            <input class="askInput" type="text" placeholder='Ask: "Where did Michael attend?"' disabled />
+            <button class="askBtn" type="button" disabled>Ask</button>
+          </div>
         </section>
       </section>
     </section>
 
-    <!-- CTA LINE -->
-    <div class="collabLine">Now Let’s Work on Yours</div>
+    <!-- Mid CTA -->
+    <div class="ctaLine">Now Let’s Work on Yours</div>
 
-    <!-- FOOTER (bottom) -->
-    <footer class="footer" id="contact">
+    <!-- Footer -->
+    <footer class="footer">
       <a class="footerItem" href="#contact">Let’s talk</a>
 
-      <!-- This opens compose in their default email app -->
-      <a class="footerItem" href="mailto:mtefera@falcon.bentley.edu?subject=Portfolio%20Inquiry&body=Hi%20Michael%2C%0A%0A">
+      <a class="footerItem"
+         href="mailto:mtefera@falcon.bentley.edu?subject=Portfolio%20Inquiry&body=Hi%20Michael%2C%0A%0A">
         Email
       </a>
 
@@ -62,9 +64,9 @@
       <a class="footerItem" href="https://www.instagram.com/__.mikee15/" target="_blank" rel="noopener">Instagram</a>
     </footer>
 
-    <div class="fineprint">© <span id="year"></span></div>
+    <div id="contact" class="fineprint">© <span id="year"></span></div>
   </main>
 
-  <script src="/portfolio/script.js?v=1200"></script>
+  <script src="/portfolio/script.js?v=1300"></script>
 </body>
 </html>
