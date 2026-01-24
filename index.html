@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Michael Mesfin Tefera</title>
 
+  <!-- Premium serif fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
   <!-- cache-buster -->
   <link rel="stylesheet" href="./styles.css?v=999" />
 </head>
@@ -33,30 +38,38 @@
         <p class="subtitle">Every Project Has a Story. Here’s Mine</p>
       </header>
 
+      <!-- Order matches your screenshot -->
       <nav class="topLinks">
-        <a class="topLink" href="./origins.html">Origins</a>
         <a class="topLink" href="./education.html">Education</a>
+        <a class="topLink" href="./origins.html">Origins</a>
         <a class="topLink" href="./work.html">My work</a>
       </nav>
 
+      <!-- Ask Michael (styled like screenshot + wired for JS if you enable it later) -->
       <section class="askCard">
         <div class="askTitle">ASK MICHAEL</div>
+
         <div class="askHint">
-          Try: <span>“Who is Michael?”</span> <span>“Where did he attend?”</span> <span>“What honors?”</span>
+          Try:
+          <span>“Who is Michael?”</span>
+          <span>“Where did he attend?”</span>
+          <span>“What honors?”</span>
         </div>
 
         <div class="askRow">
-          <input class="askInput" type="text" placeholder='Ask: "Where did Michael attend?"' disabled />
-          <button class="askBtn" type="button" disabled>Ask</button>
+          <input id="askInput" class="askInput" type="text" placeholder='Ask: "Where did Michael attend?"' disabled />
+          <button id="askBtn" class="askBtn" type="button" disabled>Ask</button>
         </div>
+
+        <div id="askAnswer" class="askAnswer" aria-live="polite"></div>
       </section>
 
       <div class="midLine">Now Let’s Work on Yours</div>
 
       <footer class="footerBar" id="contact">
         <div class="footerText">Let’s talk</div>
-        <a class="footerLink" href="mailto:mtefera@falcon.bentley.edu">Email</a>
-        <a class="footerLink" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footerLink" id="btnEmail" href="mailto:mtefera@falcon.bentley.edu">Email</a>
+        <a class="footerLink" id="btnLinkedIn" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="footerLink" href="https://www.instagram.com/__.mikee15/" target="_blank" rel="noopener">Instagram</a>
       </footer>
 
@@ -65,8 +78,7 @@
 
   </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <!-- keep file name the same -->
+  <script src="./script.js?v=999"></script>
 </body>
 </html>
