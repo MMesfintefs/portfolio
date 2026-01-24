@@ -225,3 +225,46 @@ body{
   .title{ font-size: 34px; }
   .footerLink{ font-size: 18px; }
 }
+
+
+
+/* Origins Story Page */
+.storyPage{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.backLink{
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.backLink:hover{
+  color: var(--accent);
+}
+
+.storyTitle{
+  font-size: 46px;
+  margin: 18px 0 6px;
+  letter-spacing: .04em;
+}
+
+.storyTag{
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+.storyContent p{
+  color: rgba(255,255,255,.82);
+  line-height: 1.8;
+  font-size: 17px;
+  margin-bottom: 22px;
+}
+
+.storyClose{
+  font-weight: 600;
+  color: rgba(25,195,125,.95);
+  margin-top: 28px;
+}
