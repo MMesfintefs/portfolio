@@ -5,14 +5,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Michael Mesfin Tefera</title>
 
-  <!-- Keep stylesheet name the same -->
-  <link rel="stylesheet" href="/portfolio/styles.css?v=1100" />
+  <link rel="stylesheet" href="/portfolio/styles.css?v=1200" />
 </head>
 
 <body>
   <main class="wrap">
-    <section class="layout">
 
+    <!-- FULL-WIDTH HEADER (spans left + right) -->
+    <header class="topHeader">
+      <h1 class="name">MICHAEL MESFIN TEFERA</h1>
+      <p class="tagline">Every Project Has a Story. Here’s Mine</p>
+    </header>
+
+    <!-- MAIN TWO-COLUMN CONTENT -->
+    <section class="layout">
       <!-- LEFT: portrait -->
       <aside class="leftCol">
         <div class="photoCard">
@@ -20,43 +26,45 @@
         </div>
       </aside>
 
-      <!-- RIGHT: cover -->
+      <!-- RIGHT: links + ask -->
       <section class="rightCol">
-        <header class="hero">
-          <h1 class="name">MICHAEL MESFIN TEFERA</h1>
-          <p class="tagline">Every Project Has a Story. Here’s Mine</p>
-        </header>
-
         <nav class="primaryLinks" aria-label="Primary">
           <a class="primaryLink" href="/portfolio/origins.html">Origins</a>
           <a class="primaryLink" href="/portfolio/education.html">Education</a>
           <a class="primaryLink" href="/portfolio/work.html">My Work</a>
         </nav>
 
-        <!-- Smaller Ask box: ONLY input + button -->
+        <!-- Ask box (small, no examples, no extra text) -->
         <section class="askBox" aria-label="Ask Michael">
           <div class="askRow">
             <input id="askInput" class="askInput" type="text" placeholder='Ask about Michael…' disabled />
             <button id="askBtn" class="askBtn" type="button" disabled>Ask</button>
           </div>
+
           <div id="askAnswer" class="askAnswer" aria-live="polite"></div>
         </section>
-
-        <div class="collabLine">Now Let’s Work on Yours</div>
-
-        <footer class="footer" id="contact">
-          <a class="footerItem" href="#contact">Let’s talk</a>
-          <a class="footerItem" href="mailto:mtefera@falcon.bentley.edu">Email</a>
-          <a class="footerItem" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="footerItem" href="https://www.instagram.com/__.mikee15/" target="_blank" rel="noopener">Instagram</a>
-        </footer>
-
-        <div class="fineprint">© <span id="year"></span></div>
       </section>
-
     </section>
+
+    <!-- CTA LINE -->
+    <div class="collabLine">Now Let’s Work on Yours</div>
+
+    <!-- FOOTER (bottom) -->
+    <footer class="footer" id="contact">
+      <a class="footerItem" href="#contact">Let’s talk</a>
+
+      <!-- This opens compose in their default email app -->
+      <a class="footerItem" href="mailto:mtefera@falcon.bentley.edu?subject=Portfolio%20Inquiry&body=Hi%20Michael%2C%0A%0A">
+        Email
+      </a>
+
+      <a class="footerItem" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="footerItem" href="https://www.instagram.com/__.mikee15/" target="_blank" rel="noopener">Instagram</a>
+    </footer>
+
+    <div class="fineprint">© <span id="year"></span></div>
   </main>
 
-  <script src="/portfolio/script.js?v=1100"></script>
+  <script src="/portfolio/script.js?v=1200"></script>
 </body>
 </html>
