@@ -17,7 +17,7 @@ body{
     radial-gradient(1200px 800px at 35% 45%, rgba(25,160,95,.35), rgba(0,0,0,0) 60%),
     radial-gradient(900px 700px at 75% 35%, rgba(10,120,70,.25), rgba(0,0,0,0) 55%),
     linear-gradient(180deg, #020302, #070b08 55%, #020302);
-  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", Times, serif;
 }
 
 .page{
@@ -31,6 +31,7 @@ body{
   align-items: center;
 }
 
+/* LEFT */
 .photoFrame{
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -68,13 +69,23 @@ body{
   background: rgba(0,0,0,.20);
 }
 
+/* RIGHT COLUMN LAYOUT (centered like your screenshot) */
+.right{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* HERO */
 .heroHeader{ margin-bottom: 10px; }
 
 .title{
   margin: 0;
+  font-family: "Cinzel Decorative", ui-serif, Georgia, "Times New Roman", Times, serif;
   font-size: clamp(44px, 4.2vw, 66px);
-  letter-spacing: .06em;
-  font-weight: 800;
+  letter-spacing: .04em;
+  font-weight: 700;
 }
 
 .subtitle{
@@ -83,10 +94,11 @@ body{
   font-size: clamp(16px, 1.5vw, 22px);
 }
 
+/* NAV LINKS */
 .topLinks{
   display:flex;
   justify-content: space-between;
-  gap: 28px;
+  gap: 70px;
   margin: 28px 0 26px;
 }
 
@@ -98,12 +110,14 @@ body{
 }
 .topLink:hover{ color: var(--green); }
 
+/* ASK CARD */
 .askCard{
-  width: min(860px, 100%);
+  width: min(760px, 100%);
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.14);
   background: var(--card);
   padding: 18px 18px 16px;
+  text-align: left; /* matches your screenshot */
 }
 
 .askTitle{
@@ -131,6 +145,7 @@ body{
   margin-top: 14px;
   display:flex;
   gap: 12px;
+  align-items: center;
 }
 
 .askInput{
@@ -144,6 +159,11 @@ body{
   outline: none;
 }
 
+/* keep disabled look like screenshot */
+.askInput:disabled{
+  opacity: .75;
+}
+
 .askBtn{
   border-radius: 14px;
   border: 1px solid rgba(60,255,160,.18);
@@ -154,14 +174,33 @@ body{
   cursor: not-allowed;
 }
 
+.askBtn:disabled{
+  opacity: .85;
+}
+
+/* Answer area (hidden unless used later) */
+.askAnswer{
+  margin-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding-top: 12px;
+  color: rgba(255,255,255,.82);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* MID LINE */
 .midLine{
+  width: 100%;
   margin: 26px 0 22px;
   text-align: center;
   color: rgba(255,255,255,.78);
   font-size: clamp(18px, 1.7vw, 26px);
 }
 
+/* FOOTER */
 .footerBar{
+  width: 100%;
   margin-top: 40px;
   padding-top: 18px;
   border-top: 1px solid rgba(255,255,255,.12);
@@ -169,6 +208,7 @@ body{
   justify-content: space-between;
   align-items:center;
   gap: 22px;
+  text-align: left;
 }
 
 .footerText{
@@ -186,12 +226,15 @@ body{
 .footerLink:hover{ color: var(--green); }
 
 .copyright{
+  width: 100%;
   margin-top: 10px;
   color: var(--muted2);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   font-size: 14px;
+  text-align: center;
 }
 
+/* RESPONSIVE */
 @media (max-width: 980px){
   .page{
     grid-template-columns: 1fr;
@@ -199,7 +242,9 @@ body{
     align-items: start;
     padding: 18px 0;
   }
-  .topLinks{ justify-content: space-between; gap: 16px; }
-  .footerBar{ flex-wrap: wrap; justify-content: flex-start; }
+  .right{ align-items: center; text-align: center; }
+  .topLinks{ justify-content: center; gap: 22px; flex-wrap: wrap; }
+  .askCard{ text-align: left; }
+  .footerBar{ flex-wrap: wrap; justify-content: center; text-align: center; }
   .footerLink, .footerText{ font-size: 18px; }
 }
