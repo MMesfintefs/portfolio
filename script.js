@@ -5,9 +5,9 @@ document.documentElement.classList.add("js");
 // CONFIG: EDIT THESE
 // --------------------
 const PROFILE = {
-  email: "Mtefera@falcon.bentley.edu",
-  linkedin: "www.linkedin.com/in/mtefe001-314910238",
-  profileImagePath: "assets/profile.jpg" // optional
+  email: "mtefera@falcon.bentley.edu",
+  linkedin: "https://www.linkedin.com/in/mtefe001-314910238/",
+  profileImagePath: "" // leave blank until you actually add the image
 };
 
 // Curated Knowledge Base (public-safe)
