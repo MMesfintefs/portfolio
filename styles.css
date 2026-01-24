@@ -1,4 +1,6 @@
 :root{
+  --bg1:#020302;
+  --bg2:#07110b;
   --ink: rgba(255,255,255,.92);
   --muted: rgba(255,255,255,.72);
   --muted2: rgba(255,255,255,.55);
@@ -14,110 +16,98 @@ body{
   margin:0;
   color:var(--ink);
   background:
-    radial-gradient(1200px 800px at 35% 45%, rgba(25,160,95,.35), rgba(0,0,0,0) 60%),
-    radial-gradient(900px 700px at 75% 35%, rgba(10,120,70,.25), rgba(0,0,0,0) 55%),
-    linear-gradient(180deg, #020302, #070b08 55%, #020302);
+    radial-gradient(1200px 900px at 25% 40%, rgba(20,160,95,.35), rgba(0,0,0,0) 60%),
+    radial-gradient(900px 700px at 80% 30%, rgba(10,120,70,.25), rgba(0,0,0,0) 55%),
+    linear-gradient(180deg, var(--bg1), var(--bg2) 55%, var(--bg1));
   font-family: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", Times, serif;
 }
 
-.page{
-  min-height: 100vh;
-  width: min(1260px, 95vw);
+.wrap{
+  width: min(1320px, 94vw);
   margin: 0 auto;
-  padding: 26px 0;
-  display: grid;
-  grid-template-columns: 1.05fr 1.25fr;
-  gap: 40px;
-  align-items: center;
+  padding: 34px 0 28px;
+  min-height: 100vh;
+}
+
+/* Two-column composition (matches your outline) */
+.layout{
+  display:grid;
+  grid-template-columns: 420px 1fr;
+  gap: 54px;
+  align-items: start; /* important: do NOT vertically center everything */
 }
 
 /* LEFT */
-.photoFrame{
+.photoCard{
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 18px;
+  overflow:hidden;
   border: 1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.18);
-  overflow: hidden;
-  display: grid;
-  place-items: center;
+  background: rgba(0,0,0,.16);
 }
 
 .portrait{
-  width: 100%;
-  height: 100%;
+  width:100%;
+  height:100%;
   object-fit: cover;
-  display: block;
+  display:block;
 }
 
-.photoFallback{
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 18px;
-  color: rgba(255,255,255,.78);
-}
-
-.fallbackTitle{ font-size: 18px; font-weight: 700; }
-.fallbackSub{ margin-top: 8px; color: rgba(255,255,255,.55); }
-.fallbackSub code{
-  padding: 3px 8px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.20);
-}
-
-/* RIGHT COLUMN LAYOUT (centered like your screenshot) */
-.right{
+/* RIGHT */
+.rightCol{
   display:flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start; /* important: keeps the "book cover" feel */
 }
 
-/* HERO */
-.heroHeader{ margin-bottom: 10px; }
+.hero{
+  margin-top: 6px;
+}
 
-.title{
-  margin: 0;
+.name{
+  margin:0;
   font-family: "Cinzel Decorative", ui-serif, Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(44px, 4.2vw, 66px);
-  letter-spacing: .04em;
+  font-size: clamp(54px, 5vw, 82px);
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1.02;
+  text-transform: uppercase;
+}
+
+.tagline{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: clamp(18px, 1.6vw, 26px);
+}
+
+/* Big three links (right side, like your outline) */
+.primaryLinks{
+  margin-top: 26px;
+  display:flex;
+  gap: 70px;
+  align-items: baseline;
+}
+
+.primaryLink{
+  color: rgba(255,255,255,.90);
+  text-decoration:none;
+  font-size: clamp(30px, 2.4vw, 44px);
   font-weight: 700;
 }
 
-.subtitle{
-  margin: 10px 0 0;
-  color: var(--muted);
-  font-size: clamp(16px, 1.5vw, 22px);
+.primaryLink:hover{
+  color: var(--green);
 }
 
-/* NAV LINKS */
-.topLinks{
-  display:flex;
-  justify-content: space-between;
-  gap: 70px;
-  margin: 28px 0 26px;
-}
-
-.topLink{
-  color: rgba(255,255,255,.90);
-  text-decoration: none;
-  font-size: clamp(30px, 2.6vw, 44px);
-  font-weight: 600;
-}
-.topLink:hover{ color: var(--green); }
-
-/* ASK CARD */
-.askCard{
-  width: min(760px, 100%);
+/* Ask Michael = subtle placeholder, not dominating */
+.askBox{
+  margin-top: 28px;
+  width: min(900px, 100%);
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.14);
   background: var(--card);
-  padding: 18px 18px 16px;
-  text-align: left; /* matches your screenshot */
+  padding: 16px 18px 16px;
 }
 
 .askTitle{
@@ -137,19 +127,19 @@ body{
 }
 
 .askHint span{
-  color: rgba(255,255,255,.84);
-  margin-right: 10px;
+  margin-left: 10px;
+  color: rgba(255,255,255,.86);
 }
 
 .askRow{
-  margin-top: 14px;
+  margin-top: 12px;
   display:flex;
   gap: 12px;
   align-items: center;
 }
 
 .askInput{
-  flex: 1;
+  flex:1;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(0,0,0,.18);
@@ -157,11 +147,7 @@ body{
   padding: 12px 14px;
   font-size: 14px;
   outline: none;
-}
-
-/* keep disabled look like screenshot */
-.askInput:disabled{
-  opacity: .75;
+  opacity: .78; /* disabled look */
 }
 
 .askBtn{
@@ -172,79 +158,74 @@ body{
   padding: 12px 18px;
   font-weight: 800;
   cursor: not-allowed;
-}
-
-.askBtn:disabled{
   opacity: .85;
 }
 
-/* Answer area (hidden unless used later) */
+/* keep answer area present but visually quiet */
 .askAnswer{
-  margin-top: 14px;
-  border-top: 1px solid rgba(255,255,255,.10);
-  padding-top: 12px;
-  color: rgba(255,255,255,.82);
+  margin-top: 12px;
+  color: rgba(255,255,255,.80);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   font-size: 14px;
   line-height: 1.55;
 }
 
-/* MID LINE */
-.midLine{
-  width: 100%;
-  margin: 26px 0 22px;
+/* Collab line centered under the right side, like your outline */
+.collabLine{
+  width: min(900px, 100%);
+  margin-top: 30px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.10);
   text-align: center;
   color: rgba(255,255,255,.78);
-  font-size: clamp(18px, 1.7vw, 26px);
+  font-size: clamp(20px, 1.8vw, 30px);
 }
 
-/* FOOTER */
-.footerBar{
-  width: 100%;
-  margin-top: 40px;
-  padding-top: 18px;
+/* Footer row */
+.footer{
+  width: min(900px, 100%);
+  margin-top: 26px;
+  padding-top: 16px;
   border-top: 1px solid rgba(255,255,255,.12);
   display:flex;
   justify-content: space-between;
-  align-items:center;
   gap: 22px;
-  text-align: left;
 }
 
-.footerText{
-  color: rgba(255,255,255,.82);
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.footerLink{
+.footerItem{
   color: rgba(255,255,255,.86);
   text-decoration: none;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
 }
-.footerLink:hover{ color: var(--green); }
 
-.copyright{
-  width: 100%;
+.footerItem:hover{
+  color: var(--green);
+}
+
+.fineprint{
   margin-top: 10px;
+  width: min(900px, 100%);
+  text-align: center;
   color: var(--muted2);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   font-size: 14px;
-  text-align: center;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 980px){
-  .page{
+  .layout{
     grid-template-columns: 1fr;
     gap: 22px;
-    align-items: start;
-    padding: 18px 0;
   }
-  .right{ align-items: center; text-align: center; }
-  .topLinks{ justify-content: center; gap: 22px; flex-wrap: wrap; }
-  .askCard{ text-align: left; }
-  .footerBar{ flex-wrap: wrap; justify-content: center; text-align: center; }
-  .footerLink, .footerText{ font-size: 18px; }
+  .primaryLinks{
+    flex-wrap: wrap;
+    gap: 22px;
+  }
+  .footer{
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .footerItem{ font-size: 20px; }
 }
