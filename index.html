@@ -5,18 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Michael Mesfin Tefera</title>
 
-  <!-- Premium serif fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- IMPORTANT: absolute paths for GitHub Pages -->
-  <link rel="stylesheet" href="/portfolio/styles.css?v=1001" />
+  <!-- Keep stylesheet name the same -->
+  <link rel="stylesheet" href="/portfolio/styles.css?v=1100" />
 </head>
 
 <body>
   <main class="wrap">
     <section class="layout">
+
       <!-- LEFT: portrait -->
       <aside class="leftCol">
         <div class="photoCard">
@@ -24,36 +20,25 @@
         </div>
       </aside>
 
-      <!-- RIGHT: story cover -->
+      <!-- RIGHT: cover -->
       <section class="rightCol">
         <header class="hero">
           <h1 class="name">MICHAEL MESFIN TEFERA</h1>
           <p class="tagline">Every Project Has a Story. Here’s Mine</p>
         </header>
 
-        <!-- Right-side big links -->
         <nav class="primaryLinks" aria-label="Primary">
           <a class="primaryLink" href="/portfolio/origins.html">Origins</a>
           <a class="primaryLink" href="/portfolio/education.html">Education</a>
           <a class="primaryLink" href="/portfolio/work.html">My Work</a>
         </nav>
 
-        <!-- Ask Michael (placeholder, not dominating) -->
+        <!-- Smaller Ask box: ONLY input + button -->
         <section class="askBox" aria-label="Ask Michael">
-          <div class="askTitle">ASK MICHAEL</div>
-          <div class="askHint">
-            Coming soon. Try:
-            <span>“Who is Michael?”</span>
-            <span>“Where did he attend?”</span>
-            <span>“What honors?”</span>
-          </div>
-
           <div class="askRow">
-            <input id="askInput" class="askInput" type="text"
-              placeholder='Ask: "Where did Michael attend?"' disabled />
+            <input id="askInput" class="askInput" type="text" placeholder='Ask about Michael…' disabled />
             <button id="askBtn" class="askBtn" type="button" disabled>Ask</button>
           </div>
-
           <div id="askAnswer" class="askAnswer" aria-live="polite"></div>
         </section>
 
@@ -68,10 +53,10 @@
 
         <div class="fineprint">© <span id="year"></span></div>
       </section>
+
     </section>
   </main>
 
-  <!-- IMPORTANT: absolute path -->
-  <script src="/portfolio/script.js?v=1001"></script>
+  <script src="/portfolio/script.js?v=1100"></script>
 </body>
 </html>
