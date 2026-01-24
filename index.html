@@ -1,380 +1,122 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Michael Mesfin Tefera | Story</title>
-  <meta name="description" content="Michael Mesfin Tefera — story, education, experience, honors, leadership, and trajectory." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Michael Mesfin Tefera</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- LEFT SIDEBAR -->
-  <aside class="sidebar">
-    <div class="sidebar__brand">
-      <div class="brandMark">MT</div>
-      <div class="brandText">
-        <div class="brandName">Michael</div>
-        <div class="brandMeta">Systems • Risk • Governance</div>
-      </div>
+  <header class="top">
+    <div class="brand">
+      <div class="name">MICHAEL MESFIN TEFERA</div>
+      <div class="tagline">Every Project Has a Story. Here’s Mine</div>
     </div>
 
-    <nav class="sideNav" aria-label="Site navigation">
-      <a class="sideNav__link" href="#home"><span class="dot"></span>Home</a>
-      <a class="sideNav__link" href="#overview"><span class="dot"></span>Overview</a>
-      <a class="sideNav__link" href="#story"><span class="dot"></span>Story</a>
-      <a class="sideNav__link" href="#education"><span class="dot"></span>Education</a>
-      <a class="sideNav__link" href="#experience"><span class="dot"></span>Experience</a>
-      <a class="sideNav__link" href="#honors"><span class="dot"></span>Honors</a>
-      <a class="sideNav__link" href="#leadership"><span class="dot"></span>Leadership</a>
-      <a class="sideNav__link" href="#projects"><span class="dot"></span>Projects</a>
-      <a class="sideNav__link" href="#contact"><span class="dot"></span>Contact</a>
+    <nav class="nav">
+      <a href="#origins">Origins</a>
+      <a href="#education">Education</a>
+      <a href="#work">My work</a>
     </nav>
+  </header>
 
-    <div class="sidebar__footer">
-      <div class="linksRow">
-        <a id="lnkLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <span>•</span>
-      </div>
-      <a class="miniBtn" id="lnkEmail" href="#">Email</a>
-      <div class="tiny muted">© <span id="year"></span></div>
-    </div>
-  </aside>
-
-  <!-- CONTENT -->
-  <main class="content" id="home">
-    <!-- TOP PROGRESS -->
-    <div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
-
-    <!-- HERO GRID (like the reference: big image block + text block) -->
-    <section class="hero">
-      <div class="hero__grid">
-        <!-- IMAGE BLOCK (placeholder now) -->
-        <div class="tile tile--image reveal">
-          <div class="tile__overlay"></div>
-          <div class="imgPlaceholder">
-            <div class="imgBadge">Portrait</div>
-            <div class="imgTitle">Your photo goes here</div>
-            <div class="imgMeta">Later: assets/profile.jpg</div>
-          </div>
-          <img id="profileImg" class="tile__img" alt="Michael profile photo" />
+  <main class="shell">
+    <!-- LEFT: portrait -->
+    <aside class="portraitCol">
+      <!-- Put your photo later: assets/michael.jpg -->
+      <div class="portraitFrame">
+        <img
+          src="assets/michael.jpg"
+          alt="Michael Mesfin Tefera portrait"
+          onerror="this.style.display='none'; this.parentElement.classList.add('portraitFallback');"
+        />
+        <div class="portraitPlaceholder">
+          <div class="phTitle">Portrait</div>
+          <div class="phSub">Add later: <code>assets/michael.jpg</code></div>
         </div>
-
-        <!-- TEXT BLOCK -->
-        <div class="tile tile--text reveal">
-          <div class="kicker">BUSINESS ANALYTICS</div>
-          <h1 class="headline" data-scrolltitle>
-            Michael Mesfin Tefera
-          </h1>
-
-          <p class="subhead">
-            Business analytics graduate student with a systems, risk, compliance, and governance mindset focused on
-            <span class="accent">data-driven decision-making</span>.
-
-          <!-- SCHOOL LOGOS STRIP -->
-          <div class="logoStrip">
-            <div class="logoChip" title="Bentley University">
-              <span class="logoDot"></span>
-              <span>Bentley (MSBA)</span>
-            </div>
-            <div class="logoChip" title="SUNY Plattsburgh">
-              <span class="logoDot"></span>
-              <span>SUNY Plattsburgh (BA)</span>
-            </div>
-            <div class="logoChip" title="Ethio-Parents' School (Gerji Campus)">
-              <span class="logoDot"></span>
-              <span>Ethio-Parents’ (Gerji)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- ASK MICHAEL -->
-        <div class="tile tile--ask reveal">
-          <div class="askHeader">
-            <div class="kicker">ASK MICHAEL</div>
-            <div class="askHint muted">Try: “Who is Michael?” “Where did he attend?” “What honors?”</div>
-          </div>
-
-          <div class="askRow">
-            <input id="askInput" class="askInput" type="text" placeholder='Ask: "Where did Michael attend?"' />
-            <button id="askBtn" class="btn btn--primary" type="button">Ask</button>
-          </div>
-
-          <div class="chipRow">
-            <button class="chip" data-q="Who is Michael?">Who is Michael?</button>
-            <button class="chip" data-q="Where did he attend?">Education</button>
-            <button class="chip" data-q="Where did he work?">Experience</button>
-            <button class="chip" data-q="What honors does he have?">Honors</button>
-            <button class="chip" data-q="What roles fit him?">Roles fit</button>
-          </div>
-
-          <div class="askAnswer" id="askAnswer" aria-live="polite"></div>
-          <div class="tiny muted">Curated answers only. No transcript. No private info. No fiction.</div>
-        </div>
-
-    <!-- SECTIONS (Wikipedia-ish, but styled like the reference) -->
-    <section id="overview" class="section">
-      <div class="section__head reveal">
-        <h2>Overview</h2>
-      <div class="grid2">
-        <article class="card reveal">
-          <h3>What this is</h3>
-          <p class="muted">
-            A portfolio: Which illustrates the origin, education, experience, honors, leadership, and growth of Michael.
-          </p>
-        </article>
-        
-    <section id="story" class="section section--alt">
-      <div class="section__head reveal">
-        <h2>Story</h2>
-        <p class="muted">Origins & trajectory.</p>
       </div>
+    </aside>
 
-      <div class="stack">
-        <article class="card reveal">
-          <div class="cardTop">
-            <h3>Origins</h3><span class="tag">Addis Ababa, Ethiopia</span>
-          </div>
-          <p class="muted">
-            Michael Mesfin Tefera was born and raised in Addis Ababa, Ethiopia. 
-            He completed his primary and secondary education at Ethio-Parents’ School (Gerji Campus), 
-            where he developed an early interest in business, economics, and systems thinking.
-            Growing up in a business-oriented household, he was exposed early to finance, operations, 
-            and decision-making through his parents’ work. This environment, combined with strong academic 
-            preparation in economics and business during high school, shaped his foundational business acumen.
-          </p>
-        </article>
+    <!-- RIGHT: content -->
+    <section class="contentCol">
+      <section id="origins" class="section">
+        <h2>Origins</h2>
+        <p class="lede">
+          Born in Addis Ababa, Ethiopia. Moved to the U.S. in Fall 2021 to pursue a BA and build a career at the intersection of business, systems, and analytics.
+        </p>
 
-        <article class="card reveal">
-          <div class="cardTop">
-            <h3>Move to the U.S.</h3><span class="tag">Fall 2021</span>
-          </div>
-          <p class="muted">
-            In Fall 2021, Michael moved to the United States to pursue undergraduate studies in International Business. 
-            During his academic progression, he consistently took heavy course loads and later expanded his studies by 
-            adding Management Information Systems and Business Administration as additional majors, driven by a desire to integrate business strategy with technology.
-          </p>
-        </article>
+        <div class="card">
+          <h3>What I optimize for</h3>
+          <ul>
+            <li>Structured decision-making under constraints</li>
+            <li>Risk-aware execution and governance-minded analytics</li>
+            <li>Clear documentation and stakeholder-ready storytelling</li>
+            <li>Systems thinking: how parts connect and fail</li>
+          </ul>
+        </div>
+      </section>
 
-        <article class="card reveal">
-          <div class="cardTop">
-            <h3>The through-line</h3><span class="tag">Systems + Analytics</span>
-          </div>
-          <p class="muted">
-            Alongside business, Michael maintained a long-standing curiosity for technology. 
-            Despite limited infrastructure access during his early years, he gravitated toward understanding how systems worked—often learning visually by observing, disassembling, and 
-            reconstructing devices. This analytical curiosity evolved into a structured interest in data, systems, and decision-making.
-            Through his academic and professional experiences, Michael became increasingly focused on data-driven decision-making, risk mitigation, and governance. 
-            He views analytics not as an abstract technical skill, but as a practical tool for managing uncertainty, improving outcomes, and enabling sustainable business performance.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="education" class="section">
-      <div class="section__head reveal">
+      <section id="education" class="section">
         <h2>Education</h2>
-      </div>
 
-      <div class="stack">
-        <article class="card reveal">
-          <div class="cardTop">
-            <h3>Bentley University – McCallum Graduate School of Business</h3>
-            <span class="tag">MSBA</span>
+        <div class="grid2">
+          <div class="card">
+            <h3>Bentley University — MSBA</h3>
+            <p class="muted">GPA: <span class="pill">[Add MSBA GPA]</span></p>
+            <p class="muted">Focus: Business Analytics • Systems • Risk • Governance</p>
           </div>
-          <ul class="bullets">
-            <li><strong>GPA:</strong> 3.56 / 4.00</li>
-            <li><strong>Expected:</strong> May 2027</li>
-            <li>Focus: analytics execution, data validation, reporting, decision support</li>
-          </ul>
-        </article>
 
-        <article class="card reveal">
-          <div class="cardTop">
-            <h3>SUNY Plattsburgh</h3>
-            <span class="tag">B.S. Triple Major</span>
+          <div class="card">
+            <h3>SUNY Plattsburgh — BA</h3>
+            <p class="muted">GPA: <span class="pill">[Add BA GPA]</span></p>
+            <p class="muted">Majors: International Business • MIS • Business Administration</p>
+            <p class="muted">Minor: Global Supply Chain Management</p>
           </div>
-          <ul class="bullets">
-            <li>International Business • MIS • Business Administration</li>
-            <li><strong>Minor:</strong> Global Supply Chain Management</li>
-            <li><strong>GPA:</strong> 3.68 / 4.00 (cum laude)</li>
-            <li>Graduated: May 2025</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+        </div>
 
-    <section id="experience" class="section section--alt">
-      <div class="section__head reveal">
-        <h2>Experience</h2>
-        <p class="muted">Where theory met constraints.</p>
-      </div>
+        <div class="card logoRow">
+          <img src="assets/ethio-parents.png" alt="Ethio-Parents’ School logo"
+               onerror="this.style.display='none'">
+          <img src="assets/plattsburgh.png" alt="SUNY Plattsburgh logo"
+               onerror="this.style.display='none'">
+          <img src="assets/bentley.png" alt="Bentley University logo"
+               onerror="this.style.display='none'">
+        </div>
+      </section>
 
-      <div class="stack">
-        <article class="card reveal">
-          <div class="cardTop">
-            <h3>Graduate Assistant — CIS Sandbox (Bentley)</h3>
-            <span class="tag">Sep 2025 – Present</span>
-          </div>
-          <ul class="bullets">
-            <li>Tutors 20+ students weekly in Excel, SQL, and Python</li>
-            <li>Validates datasets and analytical models to identify errors and edge cases</li>
-            <li>Supports faculty with datasets, documentation, and analytical demos</li>
-          </ul>
-        </article>
+      <section id="work" class="section">
+        <h2>My work</h2>
+        <p class="lede">Projects and case studies will publish here as they ship.</p>
 
-        <article class="card reveal">
-          <div class="cardTop">
-            <h3>Supply Chain Associate Intern — Fastenal</h3>
-            <span class="tag">Jan 2025 – May 2025</span>
-          </div>
-          <ul class="bullets">
-            <li>Managed inventory operations across two manufacturing plants</li>
-            <li>Tracked 100+ SKUs weekly to prevent downtime</li>
-            <li>Coordinated 30+ purchase orders/week; improved urgent turnaround by ~15%</li>
-            <li>Oversaw inbound inventory valued at ~$50K/month</li>
-          </ul>
-        </article>
-
-        <article class="card reveal">
-          <div class="cardTop">
-            <h3>Project & Data Coordinator Intern — Center for Cybersecurity & Technology (CCT)</h3>
-            <span class="tag">Aug 2024 – May 2025</span>
-          </div>
-          <ul class="bullets">
-            <li>Analyzed system logs and structured datasets for trends and anomalies</li>
-            <li>Identified and helped resolve 10+ security gaps in simulations</li>
-            <li>Translated analysis into clear, stakeholder-ready documentation</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="honors" class="section">
-      <div class="section__head reveal">
-        <h2>Honors</h2>
-      </div>
-
-      <div class="grid2">
-        <article class="card reveal">
-          <h3>Dean’s List</h3>
-          <p class="muted">Recognized for academic excellence across multiple semesters at SUNY Plattsburgh, School of Business & Economics, 
-            awarded to students achieving a semester GPA of 3.5 or higher.
-            academic terms: Fall 2021, Spring 2023, Fall 2023, Spring 2024.</p>
-        </article>
-
-        <article class="card reveal">
-          <h3>Beta Gamma Sigma</h3>
+        <div class="card">
+          <h3>In the meantime</h3>
           <p class="muted">
-            International honor society recognizing the top 10% of undergraduate business students and top 20% of 
-            graduate business students at AACSB-accredited institutions worldwide. 
-            Membership is by invitation only and reflects exceptional academic performance and leadership potential
+            I’m building a public work portfolio. For now, use the links below to view my timeline and contact me.
           </p>
-        </article>
 
-        <article class="card reveal">
-          <h3>Gamma Sigma Alpha</h3>
-          <p class="muted">
-            National Greek academic honor society recognizing excellence in scholarship and sustained academic performance.
-          </p>
-        </article>
-
-        <article class="card reveal">
-          <h3>NABA (Current Member)</h3>
-          <p class="muted">
-            Professional membership focused on accounting, finance, business leadership, and career development.
-          </p>
-        </article>
-      </div>
-
-      <div class="card reveal mt24">
-        <h3>Certifications</h3>
-        <ul class="bullets">
-          <li>Google Cybersecurity Professional Certificate</li>
-          <li>Excel Yellow Belt (McGraw-Hill)</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="leadership" class="section section--alt">
-      <div class="section__head reveal">
-        <h2>Leadership</h2>
-        <p class="muted">Stewardship, budgets, responsibility. The unsexy stuff that matters.</p>
-      </div>
-
-      <div class="stack">
-        <article class="card reveal">
-          <div class="cardTop">
-            <h3>Treasurer — Alpha Sigma Phi</h3>
-            <span class="tag">Apr 2023 – May 2024</span>
+          <div class="btnRow">
+            <a class="btn btn--primary" href="https://mmesfintefs.github.io/portfolio/" target="_blank" rel="noopener">
+              Portfolio (this site)
+            </a>
+            <a class="btn btn--ghost" href="#" id="workExternal" target="_blank" rel="noopener">
+              External work site (coming)
+            </a>
           </div>
-          <ul class="bullets">
-            <li>Managed a ~$12K annual budget</li>
-            <li>Built forecasting tools improving planning accuracy by ~25%</li>
-          </ul>
-        </article>
-
-        <article class="card reveal">
-          <div class="cardTop">
-            <h3>President — Gamma Sigma Alpha</h3>
-            <span class="tag">Apr 2023 – May 2024</span>
-          </div>
-          <ul class="bullets">
-            <li>Oversaw chapter operations and reporting</li>
-            <li>Coordinated with faculty advisors and executive committees</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="section__head reveal">
-        <h2>Projects</h2>
-        <p class="muted">Announced when shipped. Not before.</p>
-      </div>
-
-      <div class="grid2">
-        <article class="card reveal">
-          <div class="cardTop"><h3>Project 1</h3><span class="tag">TBA</span></div>
-          <p class="muted">To be announced.</p>
-        </article>
-        <article class="card reveal">
-          <div class="cardTop"><h3>Project 2</h3><span class="tag">TBA</span></div>
-          <p class="muted">To be announced.</p>
-        </article>
-        <article class="card reveal">
-          <div class="cardTop"><h3>Project 3</h3><span class="tag">TBA</span></div>
-          <p class="muted">To be announced.</p>
-        </article>
-        <article class="card reveal">
-          <div class="cardTop"><h3>Project 4</h3><span class="tag">TBA</span></div>
-          <p class="muted">To be announced.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="section section--alt">
-      <div class="section__head reveal">
-        <h2>Contact</h2>
-        <p class="muted">Direct lines.</p>
-      </div>
-
-      <div class="grid2">
-        <article class="card reveal">
-          <h3>Reach out</h3>
-          <p class="muted">Email is fastest. LinkedIn is the public timeline.</p>
-          <div class="ctaRow">
-            <a class="btn btn--primary" id="btnEmail" href="#">Email</a>
-            <a class="btn btn--ghost" id="btnLinkedIn" href="#" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </article>
-
-      <div class="footerLine muted">© <span id="year2"></span> Michael Mesfin Tefera</div>
+        </div>
+      </section>
     </section>
   </main>
+
+  <footer class="footerBar" id="contact">
+    <div class="footerLeft">Now Let’s Work on Yours</div>
+    <div class="footerLinks">
+      <a href="#contact">Let’s talk</a>
+      <a href="mailto:mtefera@falcon.bentley.edu">Email</a>
+      <a href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" id="igLink" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
