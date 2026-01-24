@@ -5,72 +5,58 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Michael Mesfin Tefera</title>
 
-  <!-- cache-buster so GitHub Pages stops serving old CSS -->
-  <link rel="stylesheet" href="./styles.css?v=8" />
+  <!-- Keep stylesheet name the same -->
+  <link rel="stylesheet" href="/portfolio/styles.css?v=1100" />
 </head>
 
 <body>
-  <main class="page">
+  <main class="wrap">
+    <section class="layout">
 
-    <!-- LEFT: portrait -->
-    <section class="left">
-      <div class="photoFrame">
-        <img
-          src="./assets/michael.jpg"
-          alt="Michael Mesfin Tefera"
-          onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='grid';"
-        />
-        <div id="photoFallback" class="photoFallback">
-          <div class="fallbackTitle">Photo placeholder</div>
-          <div class="fallbackSub">Add later: <code>assets/michael.jpg</code></div>
+      <!-- LEFT: portrait -->
+      <aside class="leftCol">
+        <div class="photoCard">
+          <img class="portrait" src="/portfolio/assets/michael.jpg" alt="Michael Mesfin Tefera" />
         </div>
-      </div>
-    </section>
+      </aside>
 
-    <!-- RIGHT: hero -->
-    <section class="right">
-      <header class="heroHeader">
-        <h1 class="title">MICHAEL MESFIN TEFERA</h1>
-        <p class="subtitle">Every Project Has a Story. Here’s Mine</p>
-      </header>
+      <!-- RIGHT: cover -->
+      <section class="rightCol">
+        <header class="hero">
+          <h1 class="name">MICHAEL MESFIN TEFERA</h1>
+          <p class="tagline">Every Project Has a Story. Here’s Mine</p>
+        </header>
 
-      <!-- TOP LINKS (external/extension pages) -->
-      <nav class="topLinks">
-        <a class="topLink" href="./origins.html">Origins</a>
-        <a class="topLink" href="./education.html">Education</a>
-        <a class="topLink" href="./work.html">My work</a>
-      </nav>
+        <nav class="primaryLinks" aria-label="Primary">
+          <a class="primaryLink" href="/portfolio/origins.html">Origins</a>
+          <a class="primaryLink" href="/portfolio/education.html">Education</a>
+          <a class="primaryLink" href="/portfolio/work.html">My Work</a>
+        </nav>
 
-      <!-- ASK MICHAEL (placeholder only for now) -->
-      <section class="askCard">
-        <div class="askTitle">ASK MICHAEL</div>
-        <div class="askHint">
-          Try: <span>“Who is Michael?”</span> <span>“Where did he attend?”</span> <span>“What honors?”</span>
-        </div>
+        <!-- Smaller Ask box: ONLY input + button -->
+        <section class="askBox" aria-label="Ask Michael">
+          <div class="askRow">
+            <input id="askInput" class="askInput" type="text" placeholder='Ask about Michael…' disabled />
+            <button id="askBtn" class="askBtn" type="button" disabled>Ask</button>
+          </div>
+          <div id="askAnswer" class="askAnswer" aria-live="polite"></div>
+        </section>
 
-        <div class="askRow">
-          <input class="askInput" type="text" placeholder='Ask: "Where did Michael attend?"' disabled />
-          <button class="askBtn" type="button" disabled>Ask</button>
-        </div>
+        <div class="collabLine">Now Let’s Work on Yours</div>
+
+        <footer class="footer" id="contact">
+          <a class="footerItem" href="#contact">Let’s talk</a>
+          <a class="footerItem" href="mailto:mtefera@falcon.bentley.edu">Email</a>
+          <a class="footerItem" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="footerItem" href="https://www.instagram.com/__.mikee15/" target="_blank" rel="noopener">Instagram</a>
+        </footer>
+
+        <div class="fineprint">© <span id="year"></span></div>
       </section>
 
-      <div class="midLine">Now Let’s Work on Yours</div>
-
-      <!-- FOOTER LINKS -->
-      <footer class="footerBar" id="contact">
-        <span class="footerText">Let’s talk</span>
-        <a class="footerLink" href="mailto:mtefera@falcon.bentley.edu">Email</a>
-        <a class="footerLink" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="footerLink" href="https://www.instagram.com/__.mikee15/" target="_blank" rel="noopener">Instagram</a>
-      </footer>
-
-      <div class="copyright">© <span id="year"></span></div>
     </section>
-
   </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="/portfolio/script.js?v=1100"></script>
 </body>
 </html>
