@@ -16,8 +16,8 @@ body{
   margin:0;
   color:var(--ink);
   background:
-    radial-gradient(1200px 900px at 25% 40%, rgba(20,160,95,.35), rgba(0,0,0,0) 60%),
-    radial-gradient(900px 700px at 80% 30%, rgba(10,120,70,.25), rgba(0,0,0,0) 55%),
+    radial-gradient(1200px 900px at 20% 45%, rgba(20,160,95,.36), rgba(0,0,0,0) 60%),
+    radial-gradient(900px 700px at 78% 28%, rgba(10,120,70,.26), rgba(0,0,0,0) 55%),
     linear-gradient(180deg, var(--bg1), var(--bg2) 55%, var(--bg1));
   font-family: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", Times, serif;
 }
@@ -29,19 +29,21 @@ body{
   min-height: 100vh;
 }
 
-/* Two-column composition (matches your outline) */
+/* OUTLINE LAYOUT: Left photo, right content */
 .layout{
   display:grid;
   grid-template-columns: 420px 1fr;
   gap: 54px;
-  align-items: start; /* important: do NOT vertically center everything */
+  align-items: start;
 }
 
 /* LEFT */
+.leftCol{ padding-top: 118px; } /* pushes portrait down like your reference */
+
 .photoCard{
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 18px;
+  border-radius: 22px;
   overflow:hidden;
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(0,0,0,.16);
@@ -58,17 +60,17 @@ body{
 .rightCol{
   display:flex;
   flex-direction: column;
-  align-items: flex-start; /* important: keeps the "book cover" feel */
+  align-items: flex-start;
 }
 
 .hero{
-  margin-top: 6px;
+  margin-top: 0;
 }
 
 .name{
   margin:0;
   font-family: "Cinzel Decorative", ui-serif, Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(54px, 5vw, 82px);
+  font-size: clamp(56px, 5.2vw, 86px);
   font-weight: 700;
   letter-spacing: .02em;
   line-height: 1.02;
@@ -81,7 +83,7 @@ body{
   font-size: clamp(18px, 1.6vw, 26px);
 }
 
-/* Big three links (right side, like your outline) */
+/* Three big links on the right */
 .primaryLinks{
   margin-top: 26px;
   display:flex;
@@ -96,11 +98,9 @@ body{
   font-weight: 700;
 }
 
-.primaryLink:hover{
-  color: var(--green);
-}
+.primaryLink:hover{ color: var(--green); }
 
-/* Ask Michael = subtle placeholder, not dominating */
+/* Ask box: premium, smaller presence */
 .askBox{
   margin-top: 28px;
   width: min(900px, 100%);
@@ -108,6 +108,7 @@ body{
   border: 1px solid rgba(255,255,255,.14);
   background: var(--card);
   padding: 16px 18px 16px;
+  backdrop-filter: blur(6px);
 }
 
 .askTitle{
@@ -129,6 +130,7 @@ body{
 .askHint span{
   margin-left: 10px;
   color: rgba(255,255,255,.86);
+  white-space: nowrap;
 }
 
 .askRow{
@@ -147,7 +149,7 @@ body{
   padding: 12px 14px;
   font-size: 14px;
   outline: none;
-  opacity: .78; /* disabled look */
+  opacity: .80;
 }
 
 .askBtn{
@@ -161,7 +163,6 @@ body{
   opacity: .85;
 }
 
-/* keep answer area present but visually quiet */
 .askAnswer{
   margin-top: 12px;
   color: rgba(255,255,255,.80);
@@ -170,7 +171,7 @@ body{
   line-height: 1.55;
 }
 
-/* Collab line centered under the right side, like your outline */
+/* Collab line centered under right column */
 .collabLine{
   width: min(900px, 100%);
   margin-top: 30px;
@@ -199,9 +200,7 @@ body{
   font-weight: 700;
 }
 
-.footerItem:hover{
-  color: var(--green);
-}
+.footerItem:hover{ color: var(--green); }
 
 .fineprint{
   margin-top: 10px;
@@ -212,12 +211,13 @@ body{
   font-size: 14px;
 }
 
-/* Responsive */
+/* Mobile */
 @media (max-width: 980px){
   .layout{
     grid-template-columns: 1fr;
     gap: 22px;
   }
+  .leftCol{ padding-top: 0; }
   .primaryLinks{
     flex-wrap: wrap;
     gap: 22px;
