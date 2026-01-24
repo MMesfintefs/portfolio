@@ -268,3 +268,69 @@ body{
   color: rgba(25,195,125,.95);
   margin-top: 28px;
 }
+
+/* Sub pages */
+.subPage {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 30px 100px;
+}
+
+.backLink {
+  color: #bbb;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.subTitle {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+/* Education layout */
+.eduGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.eduCard {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.eduCard h2 {
+  margin-bottom: 10px;
+}
+
+.degree, .minor, .years, .gpa, .honor {
+  margin: 4px 0;
+  color: #ccc;
+}
+
+.honor {
+  color: #7ee787;
+  font-weight: 600;
+}
+
+/* Honors section */
+.honorsSection h2 {
+  margin-bottom: 20px;
+}
+
+.honorItem {
+  margin-bottom: 25px;
+}
+
+.honorItem h3 {
+  margin-bottom: 6px;
+}
+
+.honorItem p {
+  color: #bbb;
+  line-height: 1.6;
+}
