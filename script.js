@@ -10,6 +10,14 @@ const PROFILE = {
   profileImagePath: "" // leave blank until you actually add the image
 };
 
+function setHref(id, href) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.setAttribute("href", href);
+}
+
+setHref("btnEmail", `mailto:${PROFILE.email}`);
+setHref("btnLinkedIn", PROFILE.linkedin);
 // Curated Knowledge Base (public-safe)
 const KB = {
   identity: {
