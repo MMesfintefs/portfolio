@@ -334,3 +334,44 @@ body{
   color: #bbb;
   line-height: 1.6;
 }
+
+/* Vertical stacked education */
+.eduStack {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 70px;
+}
+
+.eduCardRow {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.schoolLogo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.eduInfo h2 {
+  margin-bottom: 6px;
+}
+
+.eduInfo p {
+  margin: 3px 0;
+  color: #ccc;
+}
+
+.highlight {
+  color: #7ee787;
+  font-weight: 600;
+}
