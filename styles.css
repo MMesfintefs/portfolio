@@ -23,17 +23,17 @@ body{
 }
 
 .wrap{
-  width: min(1320px, 94vw);
+  width: min(1200px, 94vw);
   margin: 0 auto;
-  padding: 34px 0 28px;
+  padding: 24px 0 18px;
   min-height: 100vh;
 }
 
 /* Outline layout: left photo, right content */
 .layout{
   display:grid;
-  grid-template-columns: 420px 1fr;
-  gap: 54px;
+  grid-template-columns: minmax(320px, 380px) 1fr;
+  gap: 40px;
   align-items: start;
 }
 
@@ -66,15 +66,14 @@ body{
 /* Name must stay on one line */
 .name{
   margin:0;
-  font-size: clamp(54px, 5.2vw, 82px);
+  font-size: clamp(32px, 4.5vw, 64px); /* smaller + responsive */
   font-weight: 700;
-  letter-spacing: .02em;
-  line-height: 1.02;
+  letter-spacing: .01em;
+  line-height: 1.05;
   text-transform: uppercase;
 
-  white-space: nowrap;      /* keeps one line */
-  overflow: hidden;         /* prevents breaking layout */
-  text-overflow: ellipsis;  /* safety on small screens */
+  white-space: normal;     /* allow wrapping */
+  word-break: keep-all;  /* safety on small screens */
 }
 
 .tagline{
