@@ -20,7 +20,7 @@ body{
     radial-gradient(1100px 850px at 30% 40%, rgba(20,160,95,.32), rgba(0,0,0,0) 60%),
     radial-gradient(900px 700px at 80% 30%, rgba(10,120,70,.22), rgba(0,0,0,0) 55%),
     linear-gradient(180deg, var(--bg1), var(--bg2) 55%, var(--bg1));
-  overflow-x: hidden; /* kill sideways scroll */
+  overflow-x: hidden;
 }
 
 .wrap{
@@ -73,7 +73,7 @@ body{
   margin: 0;
   text-align: center;
   font-size: clamp(34px, 3.2vw, 46px);
-  font-weight: 400; /* not bold */
+  font-weight: 400;
   color: rgba(255,255,255,.92);
 }
 
@@ -84,13 +84,14 @@ body{
   font-size: clamp(18px, 1.6vw, 24px);
 }
 
-/* Nav row (bigger, spaced like screenshot) */
+/* Nav row - 2x2 GRID LAYOUT */
 .navLinks{
   margin-top: 30px;
-  display:flex;
-  justify-content: space-between;
-  gap: 34px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 40px;
   padding: 0 8px;
+  max-width: 600px;
 }
 
 .navLink{
@@ -98,6 +99,7 @@ body{
   text-decoration: none;
   font-size: clamp(22px, 2.1vw, 32px);
   font-weight: 700;
+  text-align: center;
 }
 
 .navLink:hover{
@@ -197,6 +199,245 @@ body{
   font-size: 13px;
 }
 
+/* ====== EDUCATION PAGE STYLES ====== */
+.subpage{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  min-height: 100vh;
+}
+
+.subHeader{
+  margin-bottom: 32px;
+}
+
+.backLink{
+  display: inline-block;
+  color: var(--green);
+  text-decoration: none;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.backLink:hover{
+  text-decoration: underline;
+}
+
+.subTitle{
+  margin: 18px 0 0;
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.block{
+  margin-top: 48px;
+}
+
+.blockTitle{
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--green);
+}
+
+.stack{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Education Cards with IMPROVED LOGO SIZING */
+.eduCard{
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+
+.eduHead{
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* FIXED: Better logo sizing and containment */
+.eduHead .logo{
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: rgba(255,255,255,.95);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.eduSchool{
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.eduMeta{
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.eduHighlight{
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--green);
+}
+
+/* Info Cards (Honors, Certifications, etc.) */
+.infoCard{
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+
+.infoHead{
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Badge images (honor societies, etc.) */
+.badge{
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: rgba(255,255,255,.05);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+/* Document icon for PDFs */
+.docIcon{
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  background: rgba(139,61,255,.15);
+  border: 2px solid var(--purple);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--purple);
+}
+
+.infoTitle{
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.infoText{
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.mutedInline{
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.docMetaRow{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.docPill{
+  font-size: 13px;
+  color: var(--muted);
+  background: rgba(255,255,255,.05);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.docLink{
+  font-size: 14px;
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.docLink:hover{
+  border-bottom-color: var(--green);
+}
+
+.infoLinks{
+  margin-top: 8px;
+}
+
+.miniLink{
+  font-size: 14px;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.miniLink:hover{
+  text-decoration: underline;
+}
+
+.subFooter{
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  text-align: center;
+}
+
+.copyright{
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+}
+
+/* ====== ORIGINS/STORY PAGE ====== */
+.storyPage{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  min-height: 100vh;
+}
+
+.storyTitle{
+  margin: 18px 0 8px;
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.storyTag{
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+.storyContent{
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.storyContent p{
+  margin-bottom: 24px;
+}
+
+.storyClose{
+  margin-top: 32px;
+  font-style: italic;
+  color: var(--green);
+  font-size: 19px;
+}
+
 /* Mobile */
 @media (max-width: 980px){
   .heroGrid{
@@ -204,10 +445,17 @@ body{
     gap: 18px;
   }
   .leftPane{ padding-top: 0; }
+  
   .navLinks{
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 100%;
   }
+  
+  .navLink{
+    text-align: center;
+  }
+  
   .askCard{
     margin-left: auto;
     margin-right: auto;
@@ -215,6 +463,18 @@ body{
   .footer{
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
+  }
+  
+  .eduHead{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .infoHead{
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 }
