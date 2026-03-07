@@ -1,1 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Compensation Drivers in STEM Careers | Michael Mesfin Tefera</title>
+  <link rel="stylesheet" href="/portfolio/styles.css?v=1302" />
+</head>
 
+<body>
+  <main class="subpage">
+
+    <header class="subHeader">
+      <a class="backLink" href="/portfolio/projects.html">← Back to Projects</a>
+      <h1 class="subTitle">Compensation Drivers in STEM Careers</h1>
+      <div class="projectMeta">
+        <span class="projectMetaItem">R</span>
+        <span class="projectMetaItem">Regression Analysis</span>
+        <span class="projectMetaItem">Statistical Modeling</span>
+      </div>
+    </header>
+
+    <!-- Project Hero Image -->
+    <section class="projectHero" style="background: linear-gradient(135deg, #2d5016 0%, #4a7c2b 100%);">
+      <div class="projectHeroIcon">💰</div>
+    </section>
+
+    <!-- Overview -->
+    <section class="block">
+      <h2 class="blockTitle">Overview</h2>
+      <div class="projectContent">
+        <p>
+          Investigated compensation patterns across 62,000+ STEM salary records to understand what influences 
+          earnings in technical careers. Using multivariate and log-linear regression modeling in R, this study 
+          explores relationships between education, experience, career mobility, and compensation outcomes.
+        </p>
+        <p>
+          The analysis reveals that education level and career mobility significantly impact earnings, while 
+          tenure shows limited long-term value in predicting compensation growth.
+        </p>
+      </div>
+    </section>
+
+    <!-- Key Findings -->
+    <section class="block">
+      <h2 class="blockTitle">Key Findings</h2>
+      <div class="findingsGrid">
+        <div class="findingCard">
+          <div class="findingIcon">📚</div>
+          <div class="findingTitle">Education Matters</div>
+          <div class="findingDesc">Advanced degrees correlate with significantly higher compensation across STEM fields</div>
+        </div>
+        
+        <div class="findingCard">
+          <div class="findingIcon">🚀</div>
+          <div class="findingTitle">Mobility Drives Growth</div>
+          <div class="findingDesc">Career mobility (job changes) shows stronger correlation with earnings than tenure at single employer</div>
+        </div>
+        
+        <div class="findingCard">
+          <div class="findingIcon">⏱️</div>
+          <div class="findingTitle">Tenure Has Limits</div>
+          <div class="findingDesc">Years at one company showed diminishing returns on compensation over time</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Approach -->
+    <section class="block">
+      <h2 class="blockTitle">Technical Approach</h2>
+      <div class="projectContent">
+        <h3 style="color: var(--green); font-size: 20px; margin-bottom: 12px;">1. Data Collection & Preparation</h3>
+        <ul class="projectList">
+          <li>Analyzed 62,000+ salary records from STEM professionals</li>
+          <li>Cleaned and standardized compensation data across industries</li>
+          <li>Created derived variables for experience, mobility, and career progression</li>
+        </ul>
+
+        <h3 style="color: var(--green); font-size: 20px; margin: 24px 0 12px;">2. Statistical Modeling</h3>
+        <ul class="projectList">
+          <li>Built multivariate regression models to identify compensation drivers</li>
+          <li>Applied log-linear transformations to handle skewed salary distributions</li>
+          <li>Tested for statistical significance of education, experience, and mobility factors</li>
+        </ul>
+
+        <h3 style="color: var(--green); font-size: 20px; margin: 24px 0 12px;">3. Analysis & Insights</h3>
+        <ul class="projectList">
+          <li>Quantified impact of education level on earning potential</li>
+          <li>Measured correlation between career moves and compensation growth</li>
+          <li>Identified diminishing returns of tenure at single employer</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Tools & Technologies -->
+    <section class="block">
+      <h2 class="blockTitle">Tools & Technologies</h2>
+      <div class="skillTags">
+        <span class="skillTag">R</span>
+        <span class="skillTag">Multivariate Regression</span>
+        <span class="skillTag">Log-Linear Models</span>
+        <span class="skillTag">Statistical Analysis</span>
+        <span class="skillTag">Data Visualization</span>
+        <span class="skillTag">ggplot2</span>
+      </div>
+    </section>
+
+    <!-- Impact -->
+    <section class="block">
+      <h2 class="blockTitle">Career Insights</h2>
+      <div class="projectContent">
+        <p>
+          This analysis provides actionable guidance for STEM professionals:
+        </p>
+        <ul class="projectList">
+          <li>Invest in advanced education for long-term earning potential</li>
+          <li>Consider strategic career moves over extended tenure at single employer</li>
+          <li>Focus on skill development and market positioning</li>
+          <li>Understand that loyalty alone may not maximize compensation growth</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="subFooter">
+      <div class="copyright">© <span id="year"></span> Michael Mesfin Tefera</div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
