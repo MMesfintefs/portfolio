@@ -1,1 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Credit Default Risk Prediction | Michael Mesfin Tefera</title>
+  <link rel="stylesheet" href="/portfolio/styles.css?v=1302" />
+</head>
 
+<body>
+  <main class="subpage">
+
+    <header class="subHeader">
+      <a class="backLink" href="/portfolio/projects.html">← Back to Projects</a>
+      <h1 class="subTitle">Credit Default Risk Prediction</h1>
+      <div class="projectMeta">
+        <span class="projectMetaItem">Python</span>
+        <span class="projectMetaItem">Logistic Regression</span>
+        <span class="projectMetaItem">Machine Learning</span>
+      </div>
+    </header>
+
+    <!-- Project Hero Image -->
+    <section class="projectHero" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a7b 100%);">
+      <div class="projectHeroIcon">📊</div>
+    </section>
+
+    <!-- Overview -->
+    <section class="block">
+      <h2 class="blockTitle">Overview</h2>
+      <div class="projectContent">
+        <p>
+          Developed a credit risk prediction model using lending data from over 300,000 applicants. 
+          The project demonstrates end-to-end machine learning workflow including data preprocessing, 
+          feature engineering, logistic regression baseline modeling, and ROC-AUC evaluation.
+        </p>
+        <p>
+          This analysis uncovers the strongest signals of borrower default risk, providing actionable 
+          insights for lending institutions to make more informed credit decisions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Key Findings -->
+    <section class="block">
+      <h2 class="blockTitle">Key Findings</h2>
+      <div class="findingsGrid">
+        <div class="findingCard">
+          <div class="findingIcon">🎯</div>
+          <div class="findingTitle">300,000+ Applicants Analyzed</div>
+          <div class="findingDesc">Comprehensive dataset covering diverse borrower profiles and lending scenarios</div>
+        </div>
+        
+        <div class="findingCard">
+          <div class="findingIcon">🔍</div>
+          <div class="findingTitle">Feature Engineering</div>
+          <div class="findingDesc">Created predictive features from raw lending data to improve model performance</div>
+        </div>
+        
+        <div class="findingCard">
+          <div class="findingIcon">📈</div>
+          <div class="findingTitle">ROC-AUC Evaluation</div>
+          <div class="findingDesc">Measured model discrimination ability using industry-standard metrics</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Approach -->
+    <section class="block">
+      <h2 class="blockTitle">Technical Approach</h2>
+      <div class="projectContent">
+        <h3 style="color: var(--green); font-size: 20px; margin-bottom: 12px;">1. Data Preprocessing</h3>
+        <ul class="projectList">
+          <li>Cleaned and validated 300,000+ applicant records</li>
+          <li>Handled missing values and outliers systematically</li>
+          <li>Encoded categorical variables for model compatibility</li>
+        </ul>
+
+        <h3 style="color: var(--green); font-size: 20px; margin: 24px 0 12px;">2. Feature Engineering</h3>
+        <ul class="projectList">
+          <li>Created derived features from application data</li>
+          <li>Analyzed correlation patterns to identify key risk indicators</li>
+          <li>Selected most predictive variables for modeling</li>
+        </ul>
+
+        <h3 style="color: var(--green); font-size: 20px; margin: 24px 0 12px;">3. Modeling & Evaluation</h3>
+        <ul class="projectList">
+          <li>Built logistic regression baseline model</li>
+          <li>Evaluated performance using ROC-AUC curves</li>
+          <li>Identified strongest predictors of default risk</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Tools & Technologies -->
+    <section class="block">
+      <h2 class="blockTitle">Tools & Technologies</h2>
+      <div class="skillTags">
+        <span class="skillTag">Python</span>
+        <span class="skillTag">Pandas</span>
+        <span class="skillTag">Scikit-learn</span>
+        <span class="skillTag">Logistic Regression</span>
+        <span class="skillTag">ROC-AUC Analysis</span>
+        <span class="skillTag">Feature Engineering</span>
+        <span class="skillTag">Data Preprocessing</span>
+      </div>
+    </section>
+
+    <!-- Impact -->
+    <section class="block">
+      <h2 class="blockTitle">Business Impact</h2>
+      <div class="projectContent">
+        <p>
+          This predictive model enables lending institutions to:
+        </p>
+        <ul class="projectList">
+          <li>Make more informed credit approval decisions</li>
+          <li>Reduce default rates by identifying high-risk applicants early</li>
+          <li>Optimize lending portfolios based on quantified risk metrics</li>
+          <li>Improve overall portfolio performance and profitability</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="subFooter">
+      <div class="copyright">© <span id="year"></span> Michael Mesfin Tefera</div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
