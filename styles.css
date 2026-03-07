@@ -558,262 +558,95 @@ body{
   font-weight: 600;
 }
 
-/* ====== PROJECTS PAGE STYLES ====== */
+/* ====== PROJECTS PAGE STYLES (Your Custom Design) ====== */
 
-/* Projects Grid */
-.projectsGrid{
+.projectsList{
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.projectBlock{
+  background: linear-gradient(135deg, #1e3a3a 0%, #2d5a5a 50%, #3a6e6e 100%);
+  padding: 40px 48px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.projectBlock:first-child{
+  border-radius: 20px 20px 0 0;
+}
+
+.projectBlock:last-child{
+  border-radius: 0 0 20px 20px;
+}
+
+.projectRow{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  margin-top: 32px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
 }
 
-/* Project Tile */
-.projectTile{
-  background: rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+.projectText{
+  color: #fff;
 }
 
-.projectTile:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(43, 211, 111, 0.2);
-  border-color: rgba(43, 211, 111, 0.3);
+.projectLinkTitle{
+  margin: 0 0 20px 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
-.projectTileLink{
+.projectLinkTitle a{
+  color: #fff;
   text-decoration: none;
-  color: inherit;
-  display: block;
+  transition: color 0.3s;
 }
 
-.projectTileImage{
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.projectIcon{
-  font-size: 64px;
-}
-
-.projectTileContent{
-  padding: 24px;
-}
-
-.projectTileTitle{
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 12px;
-}
-
-.projectTileDesc{
-  font-size: 15px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.projectTileTags{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.projectTag{
-  display: inline-block;
-  background: rgba(43, 211, 111, 0.12);
-  border: 1px solid rgba(43, 211, 111, 0.25);
+.projectLinkTitle a:hover{
   color: var(--green);
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 13px;
-  font-weight: 600;
 }
 
-/* Project Detail Page Styles */
-.projectMeta{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.projectMetaItem{
-  background: rgba(43, 211, 111, 0.15);
-  border: 1px solid rgba(43, 211, 111, 0.3);
-  color: var(--green);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.projectHero{
-  height: 300px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 32px;
-}
-
-.projectHeroIcon{
-  font-size: 120px;
-}
-
-.projectContent{
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(255,255,255,.85);
-}
-
-.projectContent p{
-  margin-bottom: 20px;
-}
-
-.projectList{
-  margin: 0;
-  padding-left: 24px;
-  list-style: none;
-}
-
-.projectList li{
-  position: relative;
-  font-size: 16px;
+.projectDesc{
+  font-size: 17px;
   line-height: 1.7;
-  color: rgba(255,255,255,.85);
-  margin-bottom: 12px;
-  padding-left: 12px;
-}
-
-.projectList li:before{
-  content: "→";
-  position: absolute;
-  left: -12px;
-  color: var(--green);
-  font-weight: 700;
-}
-
-/* Findings Grid */
-.findingsGrid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.findingCard{
-  background: rgba(43, 211, 111, 0.08);
-  border: 1px solid rgba(43, 211, 111, 0.2);
-  border-radius: 16px;
-  padding: 24px;
-  text-align: center;
-}
-
-.findingIcon{
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-.findingTitle{
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--green);
-  margin-bottom: 12px;
-}
-
-.findingDesc{
-  font-size: 15px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* ====== ORIGINS/STORY PAGE ====== */
-.storyPage{
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 28px 20px;
-  min-height: 100vh;
-}
-
-.storyTitle{
-  margin: 18px 0 8px;
-  font-size: 42px;
+  color: rgba(255,255,255,.90);
+  margin: 0;
   font-weight: 400;
 }
 
-.storyTag{
-  color: var(--muted);
-  font-size: 18px;
-  margin-bottom: 32px;
+.projectImage{
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.3);
 }
 
-.storyContent{
-  line-height: 1.8;
-  font-size: 17px;
+.projectImage img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
-.storyContent p{
-  margin-bottom: 24px;
-}
-
-.storyClose{
-  margin-top: 32px;
-  font-style: italic;
-  color: var(--green);
-  font-size: 19px;
-}
-
-/* Mobile */
+/* Mobile responsive */
 @media (max-width: 980px){
-  .heroGrid{
+  .projectRow{
     grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  .leftPane{ padding-top: 0; }
-  
-  .navLinks{
-    grid-template-columns: 1fr;
-    gap: 16px;
-    max-width: 100%;
+    gap: 24px;
   }
   
-  .navLink{
-    text-align: center;
+  .projectBlock{
+    padding: 28px 24px;
   }
   
-  .askCard{
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .footer{
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
+  .projectLinkTitle{
+    font-size: 24px;
   }
   
-  .eduHead{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .infoHead{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .projectsGrid{
-    grid-template-columns: 1fr;
-  }
-  
-  .findingsGrid{
-    grid-template-columns: 1fr;
+  .projectDesc{
+    font-size: 16px;
   }
 }
