@@ -33,9 +33,18 @@ body{
   flex-direction: column;
 }
 
-/* ====== NEW HOMEPAGE LAYOUT ====== */
+/* ====== HOMEPAGE LAYOUT (FIXED TO MATCH SCREENSHOT 1) ====== */
 
-/* Grid: Left nav, Right content */
+/* Name at very top, centered */
+.nameTop{
+  margin: 0 0 40px 0;
+  text-align: center;
+  font-size: clamp(36px, 3.5vw, 52px);
+  font-weight: 400;
+  color: rgba(255,255,255,.92);
+}
+
+/* Grid: Left nav, Right portrait */
 .heroGrid{
   display:grid;
   grid-template-columns: 240px 1fr;
@@ -45,13 +54,13 @@ body{
 
 /* LEFT: Vertical Navigation */
 .leftPane{
-  padding-top: 120px;
+  padding-top: 60px;
 }
 
 .leftNavLinks{
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
 }
 
 .leftNavLink{
@@ -66,25 +75,17 @@ body{
   color: var(--green);
 }
 
-/* RIGHT: Portrait + Content */
+/* RIGHT: Portrait + Tagline (centered) */
 .rightPane{
-  padding-top: 20px;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.name{
-  margin: 0 0 30px 0;
-  text-align: center;
-  font-size: clamp(36px, 3.5vw, 52px);
-  font-weight: 400;
-  color: rgba(255,255,255,.92);
-}
-
 .photoCard{
   width: 100%;
-  max-width: 420px;
+  max-width: 500px;
   aspect-ratio: 1 / 1;
   border-radius: 22px;
   overflow: hidden;
@@ -102,10 +103,15 @@ body{
 }
 
 .tagline{
-  margin: 0 0 30px 0;
+  margin: 0;
   text-align: center;
   color: var(--muted);
-  font-size: clamp(18px, 1.8vw, 26px);
+  font-size: clamp(20px, 1.9vw, 28px);
+}
+
+/* Remove old .name class since we're using .nameTop now */
+.name{
+  display: none;
 }
 
 /* CTA line centered */
