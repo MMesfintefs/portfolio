@@ -3,132 +3,73 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI Disruption & Automation Risk Analysis | Michael Mesfin Tefera</title>
-  <link rel="stylesheet" href="/portfolio/styles.css?v=1302" />
+  <title>AI & Workforce Analysis – Michael Mesfin Tefera</title>
+  <meta http-equiv="refresh" content="3;url=https://github.com/MMesfintefs/ai-automation-workforce-analysis/tree/main" />
+  <style>
+    :root {
+      --bg1: #020302;
+      --bg2: #07110b;
+      --green: #2bd36f;
+      --purple: #8a3dff;
+      --ink: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.65);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: "Times New Roman", Times, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 850px at 30% 40%, rgba(20,160,95,.32), transparent 60%),
+        radial-gradient(900px 700px at 80% 30%, rgba(10,120,70,.22), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2) 55%, var(--bg1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      text-align: center;
+      max-width: 520px;
+      padding: 48px 40px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 20px;
+      background: rgba(0,0,0,.30);
+    }
+    .icon { font-size: 56px; margin-bottom: 20px; }
+    h1 { font-size: 28px; font-weight: 400; margin-bottom: 12px; }
+    p { color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 28px; }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--green), #1fa057);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(43,211,111,.30);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(43,211,111,.45); }
+    .note { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.40); }
+    .back { margin-top: 28px; display: block; color: var(--green); font-size: 14px; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
 </head>
-
 <body>
-  <main class="subpage">
-
-    <header class="subHeader">
-      <a class="backLink" href="/portfolio/projects.html">← Back to Projects</a>
-      <h1 class="subTitle">AI Disruption & Automation Risk Analysis</h1>
-      <div class="projectMeta">
-        <span class="projectMetaItem">Tableau</span>
-        <span class="projectMetaItem">R</span>
-        <span class="projectMetaItem">Data Visualization</span>
-      </div>
-    </header>
-
-    <!-- Project Hero Image -->
-    <section class="projectHero" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
-      <div class="projectHeroIcon">🤖</div>
-    </section>
-
-    <!-- Overview -->
-    <section class="block">
-      <h2 class="blockTitle">Overview</h2>
-      <div class="projectContent">
-        <p>
-          Analyzed workforce data to explore how AI and automation may reshape occupations by 2030. 
-          This managerial analytics study combines Tableau dashboards with statistical validation in R 
-          to examine how job structure and skills relate to automation exposure.
-        </p>
-        <p>
-          The analysis reveals that skill complexity, not education level or years of experience, 
-          predicts job resilience in the face of AI-driven automation.
-        </p>
-      </div>
-    </section>
-
-    <!-- Key Findings -->
-    <section class="block">
-      <h2 class="blockTitle">Key Findings</h2>
-      <div class="findingsGrid">
-        <div class="findingCard">
-          <div class="findingIcon">🧠</div>
-          <div class="findingTitle">Skills Over Credentials</div>
-          <div class="findingDesc">Skill complexity predicts job resilience better than education level or experience</div>
-        </div>
-        
-        <div class="findingCard">
-          <div class="findingIcon">⚡</div>
-          <div class="findingTitle">2030 Occupation Shifts</div>
-          <div class="findingDesc">Identified which occupations face highest automation risk by 2030</div>
-        </div>
-        
-        <div class="findingCard">
-          <div class="findingIcon">📊</div>
-          <div class="findingTitle">Visual Analytics</div>
-          <div class="findingDesc">Built interactive Tableau dashboards to explore automation patterns across industries</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Approach -->
-    <section class="block">
-      <h2 class="blockTitle">Technical Approach</h2>
-      <div class="projectContent">
-        <h3 style="color: var(--green); font-size: 20px; margin-bottom: 12px;">1. Data Collection & Analysis</h3>
-        <ul class="projectList">
-          <li>Analyzed workforce data across multiple industries and job categories</li>
-          <li>Mapped job tasks to automation susceptibility metrics</li>
-          <li>Evaluated skill requirements and complexity levels</li>
-        </ul>
-
-        <h3 style="color: var(--green); font-size: 20px; margin: 24px 0 12px;">2. Visual Analytics in Tableau</h3>
-        <ul class="projectList">
-          <li>Built interactive dashboards showing automation risk by occupation</li>
-          <li>Created visualizations of skill complexity vs. automation exposure</li>
-          <li>Designed filters for exploring patterns by industry, education, experience</li>
-        </ul>
-
-        <h3 style="color: var(--green); font-size: 20px; margin: 24px 0 12px;">3. Statistical Validation in R</h3>
-        <ul class="projectList">
-          <li>Performed statistical tests to validate automation risk patterns</li>
-          <li>Analyzed correlation between job characteristics and resilience</li>
-          <li>Tested hypothesis that skill complexity predicts job security</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Tools & Technologies -->
-    <section class="block">
-      <h2 class="blockTitle">Tools & Technologies</h2>
-      <div class="skillTags">
-        <span class="skillTag">Tableau</span>
-        <span class="skillTag">R</span>
-        <span class="skillTag">Statistical Testing</span>
-        <span class="skillTag">Data Visualization</span>
-        <span class="skillTag">Dashboard Design</span>
-        <span class="skillTag">Predictive Analytics</span>
-      </div>
-    </section>
-
-    <!-- Impact -->
-    <section class="block">
-      <h2 class="blockTitle">Strategic Implications</h2>
-      <div class="projectContent">
-        <p>
-          This analysis provides guidance for workforce planning and career development:
-        </p>
-        <ul class="projectList">
-          <li>Focus on developing complex, non-routine skills to remain resilient</li>
-          <li>Education credentials alone don't guarantee protection from automation</li>
-          <li>Organizations should prioritize reskilling for AI-adjacent roles</li>
-          <li>Career planning should emphasize skill development over tenure accumulation</li>
-        </ul>
-      </div>
-    </section>
-
-    <footer class="subFooter">
-      <div class="copyright">© <span id="year"></span> Michael Mesfin Tefera</div>
-    </footer>
-
-  </main>
-
+  <div class="card">
+    <div class="icon">🤖</div>
+    <h1>AI Automation & Workforce Analysis</h1>
+    <p>An analysis of how AI automation is reshaping workforce dynamics across industries. You're being redirected to the GitHub repository.</p>
+    <a class="btn" href="https://github.com/MMesfintefs/ai-automation-workforce-analysis/tree/main">View on GitHub →</a>
+    <p class="note">Redirecting automatically in 3 seconds…</p>
+    <a class="back" href="/portfolio/projects.html">← Back to Projects</a>
+  </div>
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    setTimeout(() => {
+      window.location.href = "https://github.com/MMesfintefs/ai-automation-workforce-analysis/tree/main";
+    }, 3000);
   </script>
 </body>
 </html>
