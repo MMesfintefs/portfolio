@@ -4,58 +4,219 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Michael Mesfin Tefera</title>
+  <style>
+    :root {
+      --bg1: #020302;
+      --bg2: #07110b;
+      --ink: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --green: #2bd36f;
+      --purple: #8a3dff;
+    }
 
-  <link rel="stylesheet" href="/portfolio/styles.css?v=1306" />
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 850px at 30% 40%, rgba(20,160,95,.32), rgba(0,0,0,0) 60%),
+        radial-gradient(900px 700px at 80% 30%, rgba(10,120,70,.22), rgba(0,0,0,0) 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2) 55%, var(--bg1));
+    }
+
+    .page {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto auto;
+      padding: clamp(12px, 2vh, 28px) clamp(16px, 3vw, 48px);
+    }
+
+    .nameTop {
+      text-align: center;
+      font-size: clamp(26px, 3.5vw, 52px);
+      font-weight: 400;
+      padding-bottom: clamp(8px, 1.5vh, 20px);
+    }
+
+    .heroGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      min-height: 0;
+    }
+
+    /* LEFT: Nav */
+    .navCol {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: clamp(12px, 2.5vh, 36px);
+      padding-left: clamp(0px, 1vw, 20px);
+      height: 100%;
+    }
+
+    .navLink {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: clamp(22px, 2.8vw, 42px);
+      font-weight: 700;
+      transition: color 0.25s;
+    }
+
+    .navLink:hover { color: var(--green); }
+
+    /* CENTER: Tagline */
+    .taglineCol {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 clamp(12px, 2vw, 32px);
+    }
+
+    .tagline {
+      font-size: clamp(18px, 2vw, 30px);
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 340px;
+    }
+
+    /* RIGHT: Photo */
+    .photoCol {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: clamp(0px, 1vw, 20px);
+      height: 100%;
+    }
+
+    .photoCard {
+      width: clamp(180px, 22vw, 320px);
+      aspect-ratio: 3 / 4;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid var(--purple);
+      box-shadow: 0 12px 40px rgba(0,0,0,.4);
+      background: #fff;
+    }
+
+    .portrait {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* CTA */
+    .ctaLine {
+      text-align: center;
+      font-size: clamp(16px, 1.8vw, 28px);
+      color: rgba(255,255,255,.80);
+      padding: clamp(8px, 1.2vh, 18px) 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+      margin-top: clamp(6px, 1vh, 16px);
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: clamp(8px, 1.2vh, 18px);
+      border-top: 1px solid rgba(255,255,255,.12);
+      gap: 12px;
+    }
+
+    .footerItem {
+      color: rgba(255,255,255,.86);
+      text-decoration: none;
+      font-size: clamp(14px, 1.5vw, 22px);
+      font-weight: 700;
+      transition: color 0.25s;
+    }
+
+    .footerItem:hover { color: var(--green); }
+
+    .fineprint {
+      text-align: center;
+      color: rgba(255,255,255,.45);
+      font-size: 12px;
+      padding-top: 4px;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      html, body { overflow: auto; }
+      .page { height: auto; min-height: 100vh; }
+      .heroGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+      }
+      .photoCol { justify-content: center; padding-right: 0; }
+      .navCol {
+        align-items: center;
+        padding-left: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+      .navLink { font-size: 22px; }
+      .footer { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
 </head>
-
 <body>
-  <main class="wrap">
+  <div class="page">
 
-    <!-- Name at top -->
     <h1 class="nameTop">Michael Mesfin Tefera</h1>
 
-    <section class="heroGrid">
-      <!-- LEFT: Navigation Links -->
-      <aside class="leftPane">
-        <nav class="leftNavLinks" aria-label="Primary">
-          <a class="leftNavLink" href="/portfolio/education.html">Education</a>
-          <a class="leftNavLink" href="/portfolio/experience.html">Experience</a>
-          <a class="leftNavLink" href="/portfolio/origins.html">Origins</a>
-          <a class="leftNavLink" href="/portfolio/projects.html">Project</a>
-        </nav>
-      </aside>
+    <div class="heroGrid">
 
-      <!-- RIGHT: Portrait + Tagline -->
-      <section class="rightPane">
+      <!-- LEFT: Nav -->
+      <nav class="navCol" aria-label="Primary">
+        <a class="navLink" href="/portfolio/education.html">Education</a>
+        <a class="navLink" href="/portfolio/experience.html">Experience</a>
+        <a class="navLink" href="/portfolio/origins.html">Origins</a>
+        <a class="navLink" href="/portfolio/projects.html">Project</a>
+      </nav>
+
+      <!-- CENTER: Tagline -->
+      <div class="taglineCol">
+        <p class="tagline">Every Project Has a Story,<br>Here's Mine</p>
+      </div>
+
+      <!-- RIGHT: Photo -->
+      <div class="photoCol">
         <div class="photoCard">
           <img class="portrait" src="/portfolio/assets/michael.jpg" alt="Michael Mesfin Tefera" />
         </div>
+      </div>
 
-        <p class="tagline">Every Project Has a Story, Here's Mine</p>
-      </section>
-    </section>
+    </div>
 
-    <!-- Mid CTA -->
     <div class="ctaLine">Now Let's Work on Yours</div>
 
-    <!-- Footer -->
     <footer class="footer">
       <a class="footerItem" href="#contact">Let's talk</a>
-
-      <a class="footerItem"
-         href="mailto:mtefera@falcon.bentley.edu?subject=Portfolio%20Inquiry&body=Hi%20Michael%2C%0A%0A">
-        Email
-      </a>
-
+      <a class="footerItem" href="mailto:mtefera@falcon.bentley.edu?subject=Portfolio%20Inquiry&body=Hi%20Michael%2C%0A%0A">Email</a>
       <a class="footerItem" href="https://www.linkedin.com/in/mtefe001-314910238/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="footerItem" href="https://www.instagram.com/__.mikee15/" target="_blank" rel="noopener">Instagram</a>
     </footer>
 
     <div id="contact" class="fineprint">© <span id="year"></span></div>
-  </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  </div>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
