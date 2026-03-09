@@ -3,132 +3,73 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Compensation Drivers in STEM Careers | Michael Mesfin Tefera</title>
-  <link rel="stylesheet" href="/portfolio/styles.css?v=1302" />
+  <title>STEM Salary Regression – Michael Mesfin Tefera</title>
+  <meta http-equiv="refresh" content="3;url=https://github.com/MMesfintefs/stem-salary-regression-analysis" />
+  <style>
+    :root {
+      --bg1: #020302;
+      --bg2: #07110b;
+      --green: #2bd36f;
+      --purple: #8a3dff;
+      --ink: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.65);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: "Times New Roman", Times, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 850px at 30% 40%, rgba(20,160,95,.32), transparent 60%),
+        radial-gradient(900px 700px at 80% 30%, rgba(10,120,70,.22), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2) 55%, var(--bg1));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      text-align: center;
+      max-width: 520px;
+      padding: 48px 40px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 20px;
+      background: rgba(0,0,0,.30);
+    }
+    .icon { font-size: 56px; margin-bottom: 20px; }
+    h1 { font-size: 28px; font-weight: 400; margin-bottom: 12px; }
+    p { color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 28px; }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--green), #1fa057);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(43,211,111,.30);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(43,211,111,.45); }
+    .note { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.40); }
+    .back { margin-top: 28px; display: block; color: var(--green); font-size: 14px; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+  </style>
 </head>
-
 <body>
-  <main class="subpage">
-
-    <header class="subHeader">
-      <a class="backLink" href="/portfolio/projects.html">← Back to Projects</a>
-      <h1 class="subTitle">Compensation Drivers in STEM Careers</h1>
-      <div class="projectMeta">
-        <span class="projectMetaItem">R</span>
-        <span class="projectMetaItem">Regression Analysis</span>
-        <span class="projectMetaItem">Statistical Modeling</span>
-      </div>
-    </header>
-
-    <!-- Project Hero Image -->
-    <section class="projectHero" style="background: linear-gradient(135deg, #2d5016 0%, #4a7c2b 100%);">
-      <div class="projectHeroIcon">💰</div>
-    </section>
-
-    <!-- Overview -->
-    <section class="block">
-      <h2 class="blockTitle">Overview</h2>
-      <div class="projectContent">
-        <p>
-          Investigated compensation patterns across 62,000+ STEM salary records to understand what influences 
-          earnings in technical careers. Using multivariate and log-linear regression modeling in R, this study 
-          explores relationships between education, experience, career mobility, and compensation outcomes.
-        </p>
-        <p>
-          The analysis reveals that education level and career mobility significantly impact earnings, while 
-          tenure shows limited long-term value in predicting compensation growth.
-        </p>
-      </div>
-    </section>
-
-    <!-- Key Findings -->
-    <section class="block">
-      <h2 class="blockTitle">Key Findings</h2>
-      <div class="findingsGrid">
-        <div class="findingCard">
-          <div class="findingIcon">📚</div>
-          <div class="findingTitle">Education Matters</div>
-          <div class="findingDesc">Advanced degrees correlate with significantly higher compensation across STEM fields</div>
-        </div>
-        
-        <div class="findingCard">
-          <div class="findingIcon">🚀</div>
-          <div class="findingTitle">Mobility Drives Growth</div>
-          <div class="findingDesc">Career mobility (job changes) shows stronger correlation with earnings than tenure at single employer</div>
-        </div>
-        
-        <div class="findingCard">
-          <div class="findingIcon">⏱️</div>
-          <div class="findingTitle">Tenure Has Limits</div>
-          <div class="findingDesc">Years at one company showed diminishing returns on compensation over time</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Approach -->
-    <section class="block">
-      <h2 class="blockTitle">Technical Approach</h2>
-      <div class="projectContent">
-        <h3 style="color: var(--green); font-size: 20px; margin-bottom: 12px;">1. Data Collection & Preparation</h3>
-        <ul class="projectList">
-          <li>Analyzed 62,000+ salary records from STEM professionals</li>
-          <li>Cleaned and standardized compensation data across industries</li>
-          <li>Created derived variables for experience, mobility, and career progression</li>
-        </ul>
-
-        <h3 style="color: var(--green); font-size: 20px; margin: 24px 0 12px;">2. Statistical Modeling</h3>
-        <ul class="projectList">
-          <li>Built multivariate regression models to identify compensation drivers</li>
-          <li>Applied log-linear transformations to handle skewed salary distributions</li>
-          <li>Tested for statistical significance of education, experience, and mobility factors</li>
-        </ul>
-
-        <h3 style="color: var(--green); font-size: 20px; margin: 24px 0 12px;">3. Analysis & Insights</h3>
-        <ul class="projectList">
-          <li>Quantified impact of education level on earning potential</li>
-          <li>Measured correlation between career moves and compensation growth</li>
-          <li>Identified diminishing returns of tenure at single employer</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Tools & Technologies -->
-    <section class="block">
-      <h2 class="blockTitle">Tools & Technologies</h2>
-      <div class="skillTags">
-        <span class="skillTag">R</span>
-        <span class="skillTag">Multivariate Regression</span>
-        <span class="skillTag">Log-Linear Models</span>
-        <span class="skillTag">Statistical Analysis</span>
-        <span class="skillTag">Data Visualization</span>
-        <span class="skillTag">ggplot2</span>
-      </div>
-    </section>
-
-    <!-- Impact -->
-    <section class="block">
-      <h2 class="blockTitle">Career Insights</h2>
-      <div class="projectContent">
-        <p>
-          This analysis provides actionable guidance for STEM professionals:
-        </p>
-        <ul class="projectList">
-          <li>Invest in advanced education for long-term earning potential</li>
-          <li>Consider strategic career moves over extended tenure at single employer</li>
-          <li>Focus on skill development and market positioning</li>
-          <li>Understand that loyalty alone may not maximize compensation growth</li>
-        </ul>
-      </div>
-    </section>
-
-    <footer class="subFooter">
-      <div class="copyright">© <span id="year"></span> Michael Mesfin Tefera</div>
-    </footer>
-
-  </main>
-
+  <div class="card">
+    <div class="icon">💰</div>
+    <h1>STEM Salary Regression Analysis</h1>
+    <p>A regression analysis examining compensation trends across STEM fields. You're being redirected to the GitHub repository.</p>
+    <a class="btn" href="https://github.com/MMesfintefs/stem-salary-regression-analysis">View on GitHub →</a>
+    <p class="note">Redirecting automatically in 3 seconds…</p>
+    <a class="back" href="/portfolio/projects.html">← Back to Projects</a>
+  </div>
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    setTimeout(() => {
+      window.location.href = "https://github.com/MMesfintefs/stem-salary-regression-analysis";
+    }, 3000);
   </script>
 </body>
 </html>
